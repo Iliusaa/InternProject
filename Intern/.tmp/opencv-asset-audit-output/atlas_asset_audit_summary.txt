@@ -1,0 +1,24 @@
+Audited active atlas-derived PNGs: 50
+Flagged candidates: 22
+Assets/Generated/MVP/projectiles/enemy_shooter_projectile.png :: many_tiny_fragments
+Assets/Generated/MVP/ui/icons/ui_icon_archer_bow.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_back.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_heart_empty.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_mage_staff.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_upgrade_agility.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_upgrade_greed.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_upgrade_power.png :: low_alpha_residue
+Assets/Generated/MVP/ui/icons/ui_icon_warrior_sword.png :: low_alpha_residue
+Assets/Generated/MVP/vfx/vfx_coin_sparkle_sheet.png :: many_tiny_fragments
+Assets/Generated/MVP/vfx/vfx_magic_bolt_trail_sheet.png :: many_tiny_fragments
+Assets/Generated/MVP/vfx/vfx_room_clear_door_glow_sheet.png :: many_tiny_fragments
+Assets/Generated/MVP/vfx/vfx_score_float_marker_sheet.png :: many_tiny_fragments
+Assets/Generated/MVP/vfx/vfx_warrior_slash_arc_sheet.png :: many_tiny_fragments
+Assets/Generated/MVP/world/doors/world_north_exit_locked.png :: low_alpha_residue
+Assets/Generated/MVP/world/doors/world_north_exit_unlocked_sheet.png :: low_alpha_residue
+Assets/Generated/MVP/world/doors/world_south_entrance.png :: low_alpha_residue
+Assets/Generated/MVP/world/props/world_banner_crimson_prop.png :: low_alpha_residue
+Assets/Generated/MVP/world/props/world_chain_cage_prop.png :: low_alpha_residue
+Assets/Generated/MVP/world/props/world_rubble_prop.png :: low_alpha_residue
+Assets/Generated/MVP/world/props/world_skull_bone_prop.png :: low_alpha_residue
+Assets/Generated/MVP/world/rooms/world_room_template_stone_chamber.png :: low_alpha_residue

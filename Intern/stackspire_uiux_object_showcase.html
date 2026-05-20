@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackspire Portrait UI/UX Showcase</title>
+    <style>
+        :root {
+            /* Palette */
+            --ink-void: #0E0B10;
+            --ink-deep: #17131A;
+            --ink-surface: #262129;
+            --stone-dark: #343038;
+            --stone-mid: #4B4447;
+            --stone-light: #6D6461;
+            --gold-torch: #8F5A24;
+            --gold-primary: #C18432;
+            --gold-bright: #E0B75C;
+            --bone-parchment: #D6C6A1;
+            --bone-muted: #B8A487;
+            --warrior-crimson: #9E2527;
+            --archer-green: #8A9B55;
+            --mage-violet: #7B6A9B;
+            --danger-red: #D64A32;
+
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --portrait-ratio: calc(9 / 16);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--ink-void);
+            color: var(--bone-parchment);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--ink-deep);
+            border-bottom: 2px solid var(--gold-torch);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--bone-muted);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--gold-bright);
+        }
+
+        /* Header */
+        header {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--ink-deep), var(--ink-void));
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--gold-bright);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .summary {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--bone-muted);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 0.9rem;
+            color: var(--gold-primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--gold-bright);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--gold-torch);
+            padding-left: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Artboards - Portrait Layout */
+        .artboard-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 2rem;
+            padding-bottom: 2rem;
+            scroll-snap-type: x mandatory;
+        }
+
+        .artboard-wrapper {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
+
+        .artboard {
+            position: relative;
+            width: 360px; /* Base mobile width */
+            height: 640px; /* 9:16 aspect ratio */
+            background-color: #000;
+            border: 4px solid var(--stone-dark);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            overflow: hidden;
+            font-size: 14px;
+        }
+
+        .artboard-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .artboard-label {
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--gold-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* UI Overlays */
+        .ui-element {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .btn {
+            cursor: pointer;
+            transition: transform 0.1s;
+            text-align: center;
+            color: var(--ink-void);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .btn-primary {
+            width: 240px;
+            height: 60px;
+            background-image: url('Assets/Generated/MVP/ui/buttons/ui_button_primary_gold_portrait_sheet.png');
+            background-position: top;
+            font-size: 1.4rem;
+        }
+
+        .btn-secondary {
+            width: 220px;
+            height: 50px;
+            background-image: url('Assets/Generated/MVP/ui/buttons/ui_button_secondary_stone_portrait_sheet.png');
+            color: var(--bone-parchment);
+            font-size: 1.2rem;
+        }
+
+        .btn-icon {
+            width: 48px;
+            height: 48px;
+            background-image: url('Assets/Generated/MVP/ui/buttons/ui_button_icon_stone_portrait_sheet.png');
+            font-size: 1.2rem;
+        }
+
+        /* Specific Screens */
+        .main-menu-title {
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            color: var(--gold-bright);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.9);
+            width: 100%;
+        }
+
+        .main-menu-actions {
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Class Select */
+        .class-cards-container {
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .class-card {
+            width: 100%;
+            height: 120px;
+            background-image: url('Assets/Generated/MVP/ui/cards/ui_class_card_portrait_sheet.png');
+            background-size: 100% 400%;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .class-card.selected {
+            background-position: 0 33.33%;
+        }
+
+        .class-card img { width: 64px; height: 64px; object-fit: contain; }
+        .class-card .info { flex-grow: 1; }
+        .class-card .name { font-size: 1.2rem; font-weight: bold; color: var(--gold-bright); }
+        .class-card .desc { font-size: 0.8rem; color: var(--bone-muted); }
+
+        /* HUD */
+        .hud-top {
+            top: 2%;
+            left: 5%;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .hearts-row {
+            display: flex;
+            gap: 4px;
+        }
+
+        .hearts-row img { width: 24px; height: 24px; }
+
+        .score-plaque {
+            background-image: url('Assets/Generated/MVP/ui/hud/ui_score_room_plaque_portrait_sheet.png');
+            background-size: 100% 200%;
+            width: 180px;
+            height: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .currency-chip {
+            background-image: url('Assets/Generated/MVP/ui/hud/ui_currency_chip_portrait_sheet.png');
+            background-size: 100% 200%;
+            width: 100px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            padding: 0 0.5rem;
+            gap: 4px;
+            color: var(--gold-bright);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .joystick {
+            position: absolute;
+            bottom: 10%;
+            width: 120px;
+            height: 120px;
+            background-size: 100% 200%;
+            opacity: 0.6;
+        }
+        .joystick-move { left: 10%; background-image: url('Assets/Generated/MVP/ui/joysticks/ui_joystick_movement_base_portrait_sheet.png'); }
+        .joystick-aim { right: 10%; background-image: url('Assets/Generated/MVP/ui/joysticks/ui_joystick_aim_base_portrait_sheet.png'); }
+        
+        /* Gallery */
+        .search-bar {
+            margin-bottom: 2rem;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--ink-surface);
+            border: 1px solid var(--stone-dark);
+            color: var(--bone-parchment);
+            font-size: 1.1rem;
+            border-radius: 4px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .asset-card {
+            background-color: var(--stone-dark);
+            border: 1px solid var(--stone-mid);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .asset-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-torch);
+        }
+
+        .asset-preview {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow: hidden;
+            background-image: 
+                linear-gradient(45deg, #111 25%, transparent 25%), 
+                linear-gradient(-45deg, #111 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #111 75%), 
+                linear-gradient(-45deg, transparent 75%, #111 75%);
+            background-size: 20px 20px;
+        }
+
+        .asset-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            image-rendering: pixelated;
+        }
+
+        .asset-info {
+            padding: 1rem;
+            flex-grow: 1;
+        }
+
+        .asset-id {
+            font-weight: bold;
+            color: var(--gold-bright);
+            margin-bottom: 0.25rem;
+            word-break: break-all;
+        }
+
+        .asset-cat {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .asset-path {
+            font-family: monospace;
+            font-size: 0.7rem;
+            background-color: var(--ink-void);
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-top: auto;
+            word-break: break-all;
+            color: var(--stone-light);
+        }
+
+        /* Checklist */
+        .checklist-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .checklist-table th, .checklist-table td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--stone-dark);
+        }
+
+        .checklist-table th {
+            color: var(--gold-primary);
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .status-yes { background-color: var(--archer-green); color: var(--ink-void); }
+
+        /* State Sheets */
+        .sheet-container {
+            margin-bottom: 3rem;
+        }
+        .sheet-full {
+            background-color: #000;
+            padding: 1rem;
+            border: 1px solid var(--stone-dark);
+            margin-bottom: 1rem;
+            overflow-x: auto;
+        }
+        .sheet-full img { display: block; height: auto; max-width: none; }
+        
+        /* Utils */
+        .hidden { display: none; }
+        
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#overview">Overview</a>
+        <a href="#mockups">Mockups</a>
+        <a href="#objects">Objects</a>
+        <a href="#ui">UI Assets</a>
+        <a href="#sheets">Sheets</a>
+        <a href="#screens">Screens</a>
+        <a href="#checklist">Checklist</a>
+    </nav>
+
+    <header id="overview">
+        <h1>Stackspire</h1>
+        <p class="summary">
+            A dark fantasy rogue-like mobile climber. Transitioned to <strong>Portrait Orientation</strong> for optimal one-handed mobile play.
+            This showcase presents the MVP assets and UI implementation concepts.
+        </p>
+        <div class="project-meta">
+            <span><strong>Orientation:</strong> Portrait (9:16)</span>
+            <span><strong>Style:</strong> Gothic Dark Fantasy</span>
+            <span id="total-asset-count"><strong>Assets:</strong> Loading...</span>
+        </div>
+    </header>
+
+    <section id="mockups">
+        <h2>Portrait Mockups</h2>
+        <div class="artboard-container">
+            
+            <!-- Main Menu -->
+            <div class="artboard-wrapper">
+                <span class="artboard-label">Main Menu</span>
+                <div class="artboard">
+                    <img src="Assets/Generated/MVP/screens/screen_main_menu_background_portrait.png" class="artboard-bg">
+                    <div class="ui-element main-menu-title">STACKSPIRE</div>
+                    <div class="ui-element main-menu-actions">
+                        <div class="btn btn-primary">START RUN</div>
+                        <div class="btn btn-secondary">UPGRADES</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class Select -->
+            <div class="artboard-wrapper">
+                <span class="artboard-label">Class Select</span>
+                <div class="artboard">
+                    <img src="Assets/Generated/MVP/screens/screen_class_select_background_portrait.png" class="artboard-bg">
+                    <div class="ui-element" style="top:5%; width:100%; text-align:center; font-size:1.5rem; color:var(--gold-bright); font-weight:bold;">CHOOSE CLASS</div>
+                    <div class="ui-element class-cards-container">
+                        <div class="class-card selected">
+                            <img src="Assets/Generated/MVP/characters/player_warrior.png">
+                            <div class="info">
+                                <div class="name">WARRIOR</div>
+                                <div class="desc">Melee / High Health</div>
+                            </div>
+                        </div>
+                        <div class="class-card">
+                            <img src="Assets/Generated/MVP/characters/player_archer.png">
+                            <div class="info">
+                                <div class="name">ARCHER</div>
+                                <div class="desc">Ranged / Fast</div>
+                            </div>
+                        </div>
+                        <div class="class-card">
+                            <img src="Assets/Generated/MVP/characters/player_mage.png">
+                            <div class="info">
+                                <div class="name">MAGE</div>
+                                <div class="desc">Magic / Powerful</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-element btn btn-primary" style="bottom:5%; left:50%; transform:translateX(-50%);">SELECT</div>
+                </div>
+            </div>
+
+            <!-- Game HUD -->
+            <div class="artboard-wrapper">
+                <span class="artboard-label">Game HUD</span>
+                <div class="artboard">
+                    <img src="Assets/Generated/MVP/screens/screen_game_hud_room_background_portrait.png" class="artboard-bg">
+                    <!-- Room Placeholder -->
+                    <div class="ui-element" style="top:50%; left:50%; transform:translate(-50%, -50%); width:300px; height:400px; border:1px dashed var(--stone-light);">
+                        <img src="Assets/Generated/MVP/characters/player_warrior.png" style="position:absolute; bottom:20%; left:40%; width:80px;">
+                        <img src="Assets/Generated/MVP/enemies/enemy_grunt.png" style="position:absolute; top:30%; right:20%; width:64px;">
+                    </div>
+                    
+                    <div class="ui-element hud-top">
+                        <div class="hearts-row">
+                            <img src="Assets/Generated/MVP/ui/icons/ui_icon_heart_full.png">
+                            <img src="Assets/Generated/MVP/ui/icons/ui_icon_heart_full.png">
+                            <img src="Assets/Generated/MVP/ui/icons/ui_icon_heart_empty.png">
+                        </div>
+                        <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                            <div class="score-plaque">
+                                <div style="color:var(--gold-bright);">12,450</div>
+                                <div style="font-size:0.7rem; color:var(--bone-muted);">ROOM 14</div>
+                            </div>
+                            <div class="currency-chip">
+                                <img src="Assets/Generated/MVP/ui/icons/ui_icon_coin.png" style="width:16px;">
+                                <span>245</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="joystick joystick-move"></div>
+                    <div class="joystick joystick-aim"></div>
+                    
+                    <div class="ui-element btn-icon" style="top:2%; right:2%;">
+                        <img src="Assets/Generated/MVP/ui/icons/ui_icon_pause.png" style="width:32px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upgrade Menu -->
+            <div class="artboard-wrapper">
+                <span class="artboard-label">Upgrades</span>
+                <div class="artboard">
+                    <img src="Assets/Generated/MVP/screens/screen_upgrade_menu_background_portrait.png" class="artboard-bg">
+                    <div class="ui-element" style="top:5%; width:100%; text-align:center; font-size:1.5rem; color:var(--gold-bright); font-weight:bold;">UPGRADES</div>
+                    
+                    <div class="ui-element" style="top:15%; left:5%; width:90%; height:70%; display:flex; flex-direction:column; gap:10px;">
+                        <div style="height:80px; background-image:url('Assets/Generated/MVP/ui/rows/ui_upgrade_row_global_portrait_sheet.png'); background-size:100% 400%; display:flex; align-items:center; padding:10px;">
+                            <img src="Assets/Generated/MVP/ui/icons/ui_icon_upgrade_toughness.png" style="width:40px; margin-right:10px;">
+                            <div style="flex-grow:1;">
+                                <div style="font-weight:bold;">TOUGHNESS</div>
+                                <div style="font-size:0.7rem;">+1 Max Heart</div>
+                            </div>
+                            <div class="btn btn-primary" style="width:80px; height:32px; font-size:0.8rem;">50</div>
+                        </div>
+                        <div style="height:80px; background-image:url('Assets/Generated/MVP/ui/rows/ui_upgrade_row_global_portrait_sheet.png'); background-size:100% 400%; display:flex; align-items:center; padding:10px;">
+                            <img src="Assets/Generated/MVP/ui/icons/ui_icon_upgrade_power.png" style="width:40px; margin-right:10px;">
+                            <div style="flex-grow:1;">
+                                <div style="font-weight:bold;">POWER</div>
+                                <div style="font-size:0.7rem;">+10% Damage</div>
+                            </div>
+                            <div class="btn btn-primary" style="width:80px; height:32px; font-size:0.8rem;">75</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="objects">
+        <h2>Game Objects</h2>
+        <input type="text" id="asset-search" class="search-bar" placeholder="Search assets...">
+        <div class="gallery-grid" id="asset-gallery"></div>
+    </section>
+
+    <section id="ui">
+        <h2>UI Components</h2>
+        <div class="gallery-grid" id="ui-gallery"></div>
+    </section>
+
+    <section id="sheets">
+        <h2>Sprite Sheets</h2>
+        <div id="sheets-container"></div>
+    </section>
+
+    <section id="screens">
+        <h2>Screens & Backgrounds</h2>
+        <div class="gallery-grid" id="screens-gallery"></div>
+    </section>
+
+    <section id="checklist">
+        <h2>Asset Checklist</h2>
+        <table class="checklist-table">
+            <thead>
+                <tr>
+                    <th>Asset ID</th>
+                    <th>Path</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="checklist-body"></tbody>
+        </table>
+    </section>
+
+    <script>
+        const assets = [
+            // Characters
+            { id: 'player_warrior', cat: 'character', path: 'Assets/Generated/MVP/characters/player_warrior.png' },
+            { id: 'player_archer', cat: 'character', path: 'Assets/Generated/MVP/characters/player_archer.png' },
+            { id: 'player_mage', cat: 'character', path: 'Assets/Generated/MVP/characters/player_mage.png' },
+            
+            // Enemies
+            { id: 'enemy_grunt', cat: 'enemy', path: 'Assets/Generated/MVP/enemies/enemy_grunt.png' },
+            { id: 'enemy_dasher', cat: 'enemy', path: 'Assets/Generated/MVP/enemies/enemy_dasher.png' },
+            { id: 'enemy_shooter', cat: 'enemy', path: 'Assets/Generated/MVP/enemies/enemy_shooter.png' },
+            
+            // Projectiles
+            { id: 'projectile_archer_arrow', cat: 'projectile', path: 'Assets/Generated/MVP/projectiles/projectile_archer_arrow.png' },
+            { id: 'projectile_mage_bolt', cat: 'projectile', path: 'Assets/Generated/MVP/projectiles/projectile_mage_bolt.png' },
+            { id: 'enemy_shooter_projectile', cat: 'projectile', path: 'Assets/Generated/MVP/projectiles/enemy_shooter_projectile.png' },
+            
+            // World
+            { id: 'world_room_template', cat: 'world', path: 'Assets/Generated/MVP/world/rooms/world_room_template_stone_chamber_portrait.png' },
+            { id: 'world_north_exit_locked', cat: 'world', path: 'Assets/Generated/MVP/world/doors/world_north_exit_locked.png' },
+            { id: 'world_south_entrance', cat: 'world', path: 'Assets/Generated/MVP/world/doors/world_south_entrance.png' },
+            { id: 'world_torch_prop', cat: 'world', path: 'Assets/Generated/MVP/world/props/world_torch_prop.png' },
+            { id: 'world_banner_prop', cat: 'world', path: 'Assets/Generated/MVP/world/props/world_banner_crimson_prop.png' },
+            
+            // UI Icons
+            { id: 'ui_icon_coin', cat: 'ui_icon', path: 'Assets/Generated/MVP/ui/icons/ui_icon_coin.png' },
+            { id: 'ui_icon_heart_full', cat: 'ui_icon', path: 'Assets/Generated/MVP/ui/icons/ui_icon_heart_full.png' },
+            { id: 'ui_icon_heart_empty', cat: 'ui_icon', path: 'Assets/Generated/MVP/ui/icons/ui_icon_heart_empty.png' },
+            { id: 'ui_icon_pause', cat: 'ui_icon', path: 'Assets/Generated/MVP/ui/icons/ui_icon_pause.png' },
+            { id: 'ui_icon_settings', cat: 'ui_icon', path: 'Assets/Generated/MVP/ui/icons/ui_icon_settings.png' },
+            
+            // UI Sheets
+            { id: 'ui_button_primary_sheet', cat: 'ui_sheet', path: 'Assets/Generated/MVP/ui/buttons/ui_button_primary_gold_portrait_sheet.png' },
+            { id: 'ui_button_secondary_sheet', cat: 'ui_sheet', path: 'Assets/Generated/MVP/ui/buttons/ui_button_secondary_stone_portrait_sheet.png' },
+            { id: 'ui_class_card_sheet', cat: 'ui_sheet', path: 'Assets/Generated/MVP/ui/cards/ui_class_card_portrait_sheet.png' },
+            { id: 'ui_joystick_move_sheet', cat: 'ui_sheet', path: 'Assets/Generated/MVP/ui/joysticks/ui_joystick_movement_base_portrait_sheet.png' },
+            { id: 'ui_joystick_aim_sheet', cat: 'ui_sheet', path: 'Assets/Generated/MVP/ui/joysticks/ui_joystick_aim_base_portrait_sheet.png' },
+            { id: 'ui_upgrade_row_sheet', cat: 'ui_sheet', path: 'Assets/Generated/MVP/ui/rows/ui_upgrade_row_global_portrait_sheet.png' },
+            
+            // Screens
+            { id: 'screen_main_menu', cat: 'screen', path: 'Assets/Generated/MVP/screens/screen_main_menu_background_portrait.png' },
+            { id: 'screen_class_select', cat: 'screen', path: 'Assets/Generated/MVP/screens/screen_class_select_background_portrait.png' },
+            { id: 'screen_game_hud', cat: 'screen', path: 'Assets/Generated/MVP/screens/screen_game_hud_room_background_portrait.png' },
+            { id: 'screen_upgrade_menu', cat: 'screen', path: 'Assets/Generated/MVP/screens/screen_upgrade_menu_background_portrait.png' },
+            { id: 'screen_game_over_sheet', cat: 'screen', path: 'Assets/Generated/MVP/screens/screen_game_over_background_portrait_sheet.png' }
+        ];
+
+        function createAssetCard(asset) {
+            return `
+                <div class="asset-card" data-id="${asset.id}">
+                    <div class="asset-preview">
+                        <img src="${asset.path}" loading="lazy">
+                    </div>
+                    <div class="asset-info">
+                        <div class="asset-id">${asset.id}</div>
+                        <div class="asset-cat">${asset.cat}</div>
+                        <div class="asset-path">${asset.path}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function render() {
+            const assetGallery = document.getElementById('asset-gallery');
+            const uiGallery = document.getElementById('ui-gallery');
+            const screensGallery = document.getElementById('screens-gallery');
+            const sheetsContainer = document.getElementById('sheets-container');
+            const checklistBody = document.getElementById('checklist-body');
+
+            const objects = assets.filter(a => ['character', 'enemy', 'projectile', 'world'].includes(a.cat));
+            const ui = assets.filter(a => ['ui_icon', 'ui_sheet'].includes(a.cat));
+            const screens = assets.filter(a => a.cat === 'screen');
+            const sheets = assets.filter(a => a.path.includes('_sheet'));
+
+            assetGallery.innerHTML = objects.map(createAssetCard).join('');
+            uiGallery.innerHTML = ui.map(createAssetCard).join('');
+            screensGallery.innerHTML = screens.map(createAssetCard).join('');
+            
+            sheetsContainer.innerHTML = sheets.map(s => `
+                <div class="sheet-container">
+                    <div style="margin-bottom:0.5rem; font-weight:bold; color:var(--gold-bright);">${s.id}</div>
+                    <div class="sheet-full">
+                        <img src="${s.path}">
+                    </div>
+                </div>
+            `).join('');
+
+            checklistBody.innerHTML = assets.map(a => `
+                <tr>
+                    <td>${a.id}</td>
+                    <td>${a.path}</td>
+                    <td><span class="status-badge status-yes">READY</span></td>
+                </tr>
+            `).join('');
+
+            document.getElementById('total-asset-count').innerHTML = `<strong>Assets:</strong> ${assets.length}`;
+        }
+
+        document.getElementById('asset-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.asset-card').forEach(card => {
+                const id = card.getAttribute('data-id').toLowerCase();
+                card.style.display = id.includes(term) ? 'flex' : 'none';
+            });
+        });
+
+        render();
+    </script>
+</body>
+</html>
