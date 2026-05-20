@@ -8,12 +8,14 @@ owner: "[[PM]]"
 > Codex reads **Recent** and **Lessons** every session. Archive only if investigating history.
 
 ## Recent
-- 2026-05-19 - Routed stakeholder orientation change to [[GameDesigner]] for a full portrait GDD rewrite and to [[UIUXDesigner]] for a portrait-only UI/UX rewrite gated by BA validation; paused landscape-dependent handoffs.
-- 2026-05-19 - Reconciled portrait rewrite state after BA approval and routed obsolete landscape generated asset cleanup to [[ArtDirector]] via `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`.
 - 2026-05-20 - Routed Unity repository hygiene to [[Coder]] via `Tasks/Open/Coder-Update-Unity-Gitignore-Stackspire.md`; task is limited to root `.gitignore` rules and explicitly forbids Unity content edits.
+- 2026-05-20 - Routed Warrior style-probe exploration to [[ArtDirector]] via `Tasks/Open/ArtDirector-Warrior-Style-Probe-Batch-Stackspire.md`; task is non-MVP generation for five prompt-linked Warrior style probes plus review and future skill seed, with no QA or integration handoff.
+- 2026-05-20 - Reconciled the completed Warrior style-probe batch as done, accepted Probe 04 as the canonical visual direction, and routed `Tasks/Open/ArtDirector-Convert-Probe04-Asset-Generation-Skill-Stackspire.md` to [[ArtDirector]] for the reusable skill document plus exactly one UI panel example.
 
 ## Archive
 - Session 0 - vault initialized, awaiting game idea
+- 2026-05-19 - Reconciled portrait rewrite state after BA approval and routed obsolete landscape generated asset cleanup to [[ArtDirector]] via `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`.
+- 2026-05-19 - Routed stakeholder orientation change to [[GameDesigner]] for a full portrait GDD rewrite and to [[UIUXDesigner]] for a portrait-only UI/UX rewrite gated by BA validation; paused landscape-dependent handoffs.
 - 2026-05-15 - Routed a current-style UI/UX concept image request to [[ArtDirector]] because the output is visual generation and the approved GDD/UIUX specs already define style and layout.
 - 2026-05-17 - Found existing UI/UX and visual design docs, marked completed design tasks done, routed the object-layer ambiguity to [[Architect]], and recorded BA validation of the May 16 GDD scoring/economy/art-direction update.
 - 2026-05-17 - Routed the new `Docs/AssetSpecs/` package into the existing [[ArtDirector]] UI asset request as the detailed prompt, naming, dimensions, states, and export-rule source; kept Unity object-layer planning as the active implementation blocker.

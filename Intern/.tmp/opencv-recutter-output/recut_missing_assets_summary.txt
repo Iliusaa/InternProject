@@ -1,37 +1,37 @@
-atlas_root=C:\Users\TheWorld\Desktop\Intern\Assets\Generated\MVP\_source_atlases
-restored=28
-restored	ui/icons/ui_icon_coin.png
-restored	ui/icons/ui_icon_heart_full.png
-restored	ui/icons/ui_icon_heart_empty.png
-restored	ui/icons/ui_icon_heart_armor_pip.png
-restored	ui/icons/ui_icon_heart_damage_flash.png
-restored	ui/icons/ui_icon_settings.png
-restored	ui/icons/ui_icon_back.png
-restored	ui/icons/ui_icon_warrior_sword.png
-restored	ui/icons/ui_icon_archer_bow.png
-restored	ui/icons/ui_icon_mage_staff.png
-restored	ui/icons/ui_icon_upgrade_power.png
-restored	ui/icons/ui_icon_upgrade_agility.png
-restored	ui/icons/ui_icon_upgrade_greed.png
-restored	ui/icons/ui_icon_upgrade_warrior_special.png
-restored	ui/icons/ui_icon_upgrade_archer_special.png
-restored	ui/icons/ui_icon_upgrade_mage_special.png
-restored	world/rooms/world_room_template_stone_chamber.png
-restored	world/rooms/world_floor_tile_stone_sheet.png
-restored	world/doors/world_south_entrance.png
-restored	world/doors/world_north_exit_locked.png
-restored	world/doors/world_north_exit_unlocked_sheet.png
-restored	world/props/world_wall_stone_segment.png
-restored	world/props/world_torch_prop.png
-restored	world/props/world_candle_prop.png
-restored	world/props/world_rubble_prop.png
-restored	world/props/world_skull_bone_prop.png
-restored	world/props/world_chain_cage_prop.png
-restored	world/props/world_banner_crimson_prop.png
-skipped_existing=3
+atlas_root=C:\Users\TheWorld\Desktop\InternProject\Intern\Assets\Generated\MVP\_source_atlases
+restored=0
+skipped_existing=18
+existing	ui/icons/ui_icon_coin.png
+existing	ui/icons/ui_icon_heart_full.png
+existing	ui/icons/ui_icon_heart_empty.png
+existing	ui/icons/ui_icon_heart_armor_pip.png
+existing	ui/icons/ui_icon_heart_damage_flash.png
 existing	ui/icons/ui_icon_pause.png
+existing	ui/icons/ui_icon_settings.png
+existing	ui/icons/ui_icon_back.png
+existing	ui/icons/ui_icon_warrior_sword.png
+existing	ui/icons/ui_icon_archer_bow.png
+existing	ui/icons/ui_icon_mage_staff.png
 existing	ui/icons/ui_icon_upgrade_toughness.png
-existing	world/pickups/world_coin_reward_visual_sheet.png
-skipped_missing_atlas=1
+existing	ui/icons/ui_icon_upgrade_power.png
+existing	ui/icons/ui_icon_upgrade_agility.png
+existing	ui/icons/ui_icon_upgrade_greed.png
+existing	ui/icons/ui_icon_upgrade_warrior_special.png
+existing	ui/icons/ui_icon_upgrade_archer_special.png
+existing	ui/icons/ui_icon_upgrade_mage_special.png
+skipped_missing_atlas=14
+missing_atlas	world/rooms/world_room_template_stone_chamber.png <= atlas_world.png
+missing_atlas	world/rooms/world_floor_tile_stone_sheet.png <= atlas_world.png
+missing_atlas	world/doors/world_south_entrance.png <= atlas_world.png
+missing_atlas	world/doors/world_north_exit_locked.png <= atlas_world.png
+missing_atlas	world/doors/world_north_exit_unlocked_sheet.png <= atlas_world.png
+missing_atlas	world/props/world_wall_stone_segment.png <= atlas_world.png
+missing_atlas	world/props/world_torch_prop.png <= atlas_world.png
+missing_atlas	world/props/world_candle_prop.png <= atlas_world.png
+missing_atlas	world/props/world_rubble_prop.png <= atlas_world.png
+missing_atlas	world/props/world_skull_bone_prop.png <= atlas_world.png
+missing_atlas	world/props/world_chain_cage_prop.png <= atlas_world.png
+missing_atlas	world/props/world_banner_crimson_prop.png <= atlas_world.png
+missing_atlas	world/pickups/world_coin_reward_visual_sheet.png <= atlas_world.png
 missing_atlas	ui/panels/ui_panel_stone_rounded_sheet.png <= atlas_ui_components.png
 failed=0
