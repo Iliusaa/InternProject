@@ -18,6 +18,8 @@ architecture_notes: First implementation cards were normalized into individual `
 - [[ArtDirector]] should remove obsolete landscape generated assets from `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`.
 - [[UIUXDesigner]] should rebuild portrait asset specs from `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md` before new ArtDirector generation.
 - [[Coder]] should use decomposed handoffs `Tasks/Open/T23_...` through `Tasks/Open/T41_...` for first vertical-slice implementation.
+- [[Coder]] completed `T43` at `Tasks/Done/T43_Coder-Audit-Completed-T-Generated-Assets-Stackspire.md`: imported generated primary button and joystick base sprites into `InternUnity/Assets/Generated/`, integrated them into current scene buttons and `VirtualJoystick`, and documented missing `ui_joystick_thumb` art.
+- [[Coder]] completed `T28` at `Tasks/Done/T28_Coder-Create-Player-Input-Reader-Stackspire.md`: `PlayerInputReader` now exposes movement, aim, and attack-held values, supports mobile joysticks, and has editor keyboard/mouse fallback wired in `Game.unity`.
 - [[Coder]] should run `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after T23 and before Player, Enemy, Projectile, RoomBounds, and Exit prefab implementation.
 - [[QA]] should use `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md` after T40 GameOver flow exists.
 - [[Coder]] verified UnityMCP connectivity and added the reusable external bridge under `Bridge/`; report is in `Tasks/Done/Coder-Check-UnityMCP-Connection-Stackspire.md`.

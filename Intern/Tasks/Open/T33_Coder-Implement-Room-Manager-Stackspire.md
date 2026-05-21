@@ -13,6 +13,12 @@ Status: pending
 - `GDD.md`
 - `Core/Conventions.md`
 - `Tasks/Open/T32_Coder-Implement-Grunt-Chase-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating room placeholder visuals, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/world/rooms/` or `world/props/`.
+- Use generated floor/room/prop assets only when they improve orientation without hiding enemies, projectiles, exits, or joystick-safe gameplay space.
+- In the task report, state which generated asset was used or why placeholders remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Rooms/RoomManager.cs`.
@@ -28,4 +34,3 @@ Status: pending
 - RoomManager tracks active enemies.
 - Room clear event fires exactly once when both Grunts die.
 - Current room number starts at 1.
-

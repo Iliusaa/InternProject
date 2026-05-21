@@ -30,7 +30,7 @@
 | T25 | Create portrait Canvas root | Coder | pending | T24 | Handoff: `Tasks/Open/T25_Coder-Create-Portrait-Canvas-Root-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-003 |
 | T26 | Implement safe-area root | Coder | pending | T25 | Handoff: `Tasks/Open/T26_Coder-Implement-Safe-Area-Root-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-004 |
 | T27 | Implement virtual joystick | Coder | pending | T26 | Handoff: `Tasks/Open/T27_Coder-Implement-Virtual-Joystick-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-005 |
-| T28 | Create player input reader | Coder | pending | T27 | Handoff: `Tasks/Open/T28_Coder-Create-Player-Input-Reader-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-006 |
+| T28 | Create player input reader | Coder | done | T27 | Completed: `Tasks/Done/T28_Coder-Create-Player-Input-Reader-Stackspire.md`; created `PlayerInputReader`, wired Game scene joysticks, and added editor keyboard/mouse fallback |
 | T29 | Implement player movement | Coder | pending | T22; T28 | Handoff: `Tasks/Open/T29_Coder-Implement-Player-Movement-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-007 |
 | T30 | Implement player health and damage | Coder | pending | T29 | Handoff: `Tasks/Open/T30_Coder-Implement-Player-Health-Damage-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-008 |
 | T31 | Implement enemy base | Coder | pending | T22; T30 | Handoff: `Tasks/Open/T31_Coder-Implement-Enemy-Base-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-009 |
@@ -45,6 +45,7 @@
 | T40 | Implement GameOver flow | Coder | pending | T30; T34; T35; T36 | Handoff: `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-018 |
 | T41 | Implement save system stub | Coder | pending | T23 | Handoff: `Tasks/Open/T41_Coder-Implement-Save-System-Stub-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-019 |
 | T42 | Create vertical-slice QA checklist | QA | pending | T40 | Handoff: `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-020 |
+| T43 | Audit completed T## generated/project asset integration | Coder | done | Completed T## tasks; generated asset pass | Completed: `Tasks/Done/T43_Coder-Audit-Completed-T-Generated-Assets-Stackspire.md`; imported suitable generated button and joystick base assets, documented missing joystick thumb, and did not broadly reopen completed work |
 
 ---
 

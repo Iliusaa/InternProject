@@ -30,6 +30,8 @@ last_updated: "2026-05-21"
 - [x] Unity object-layer technical plan resolved by [[Architect]] in decision `D02`; Coder setup handoff created
 - [x] `MVP_First_Task_Cards.md` normalized into actionable task files `T22` through `T42` under `Tasks/Open/`
 - [x] BA Coder kickoff clarifications documented and approved in `Tasks/Done/BA-Coder-Kickoff-Clarifications-Stackspire-MVP-2026-05-21.md`
+- [x] Completed `T##` generated/project asset audit completed by [[Coder]] as `T43`; generated scene button and joystick base sprites were imported into Unity, and missing joystick thumb art was documented
+- [x] `T28` player input reader completed by [[Coder]]; `PlayerInputReader` exposes movement, aim, and attack-held values from joysticks with editor keyboard/mouse fallback
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]

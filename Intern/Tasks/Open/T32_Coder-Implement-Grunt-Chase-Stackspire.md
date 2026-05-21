@@ -13,6 +13,12 @@ Status: pending
 - `GDD.md`
 - `Core/Conventions.md`
 - `Tasks/Open/T31_Coder-Implement-Enemy-Base-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating or finalizing the Grunt prefab visual, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/enemies/` for a suitable Grunt asset.
+- Prefer `enemy_grunt` style assets when they preserve combat readability, collider setup, and portrait scene scale.
+- In the task report, state which generated asset was used or why a placeholder remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Enemies/GruntChase.cs`.
@@ -27,4 +33,3 @@ Status: pending
 - Damage source label is `Grunt`.
 - Grunt can die through EnemyBase damage.
 - No Dasher or Shooter behavior is included.
-

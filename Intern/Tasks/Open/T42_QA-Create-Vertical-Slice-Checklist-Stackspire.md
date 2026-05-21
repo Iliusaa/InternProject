@@ -13,7 +13,13 @@ Status: pending
 - `GDD.md`
 - `Docs/UIUX_MVP_SPEC.md`
 - `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
 - Active Unity vertical-slice scene once implemented.
+
+## Generated Asset Requirement
+- Include QA checklist coverage for whether relevant generated assets were checked, used, or explicitly rejected as unsuitable.
+- Verify generated assets do not reduce gameplay readability, portrait safe-area compliance, collision clarity, or dynamic text readability.
+- Note any missing, obsolete, temporary-only, or unsuitable generated assets as follow-up items.
 
 ## Exact Deliverables
 - Create a markdown checklist under `Intern/Docs/QA/` or `Intern/Tasks/Open/`.
@@ -31,4 +37,3 @@ Status: pending
 - Checklist covers room clear and locked/unlocked exit.
 - Checklist covers score, coins, HUD, death, and GameOver stats.
 - Debug controls are available or explicitly listed as not yet implemented.
-

@@ -15,6 +15,12 @@ Status: pending
 - `Knowledge/decisions.md` decision `D02`
 - `Core/Conventions.md`
 - `Tasks/Open/T33_Coder-Implement-Room-Manager-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating north-exit placeholder visuals, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/world/doors/` plus `ui/feedback/`.
+- Prefer generated locked/unlocked exit or door indicator assets when they preserve trigger clarity and portrait gameplay readability.
+- In the task report, state which generated asset was used or why placeholders remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Rooms/NorthExit.cs`.
@@ -31,4 +37,3 @@ Status: pending
 - Exit unlocks after all enemies die.
 - Entering unlocked exit increments room number.
 - Advancing does not grant score by itself.
-

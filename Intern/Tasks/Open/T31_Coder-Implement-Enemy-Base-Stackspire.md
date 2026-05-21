@@ -15,6 +15,12 @@ Status: pending
 - `Core/Conventions.md`
 - `Knowledge/decisions.md` decision `D02`
 - `Tasks/Open/T30_Coder-Implement-Player-Health-Damage-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating the enemy base placeholder sprite, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/enemies/`.
+- Prefer a matching generated enemy sprite if it preserves readability, sorting, collider setup, and prefab clarity.
+- In the task report, state which generated asset was used or why a placeholder remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Enemies/EnemyBase.cs`.
@@ -30,4 +36,3 @@ Status: pending
 - Death event fires exactly once.
 - Enemy type label is available to listeners.
 - Placeholder prefab exists.
-

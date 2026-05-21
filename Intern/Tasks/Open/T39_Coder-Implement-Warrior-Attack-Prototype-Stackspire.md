@@ -17,6 +17,12 @@ Status: pending
 - `Tasks/Open/T28_Coder-Create-Player-Input-Reader-Stackspire.md`
 - `Tasks/Open/T31_Coder-Implement-Enemy-Base-Stackspire.md`
 - `Tasks/Open/T38_Coder-Implement-Class-Selection-State-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating Warrior attack placeholder visuals or debug hit indicators, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/vfx/`, `projectiles/`, `ui/icons/`, and `characters/`.
+- Prefer generated Warrior slash/VFX assets when they preserve attack-arc readability and do not obscure enemies or collision feedback.
+- In the task report, state which generated asset was used or why a placeholder/debug visualization remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Combat/WarriorAttack.cs`.
@@ -34,4 +40,3 @@ Status: pending
 - Enemies inside the short 180-degree arc take damage.
 - Enemies outside the arc do not take damage.
 - Multiple enemies in the arc can be hit.
-

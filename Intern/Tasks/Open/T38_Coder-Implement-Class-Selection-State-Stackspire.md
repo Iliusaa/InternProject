@@ -14,6 +14,12 @@ Status: pending
 - `Docs/UIUX_MVP_SPEC.md`
 - `Core/Conventions.md`
 - `Tasks/Open/T24_Coder-Create-MVP-Scene-Bootstrap-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating class-selection placeholder visuals, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/ui/cards/`, `ui/icons/`, and `characters/`.
+- Prefer generated class cards/icons/sprites when they preserve button clarity, selected-state readability, and portrait layout.
+- In the task report, state which generated assets were used or why placeholders remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Classes/PlayerClassId.cs`.
@@ -29,4 +35,3 @@ Status: pending
 - Warrior is default if no explicit selection occurs.
 - Game scene can read selected class.
 - Selected class survives scene transition from ClassSelect to Game.
-

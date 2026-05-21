@@ -20,6 +20,13 @@ Status: pending
 - `Tasks/Open/T34_Coder-Implement-North-Exit-Lock-Stackspire.md`
 - `Tasks/Open/T35_Coder-Implement-Run-Coin-Counter-Stackspire.md`
 - `Tasks/Open/T36_Coder-Implement-Run-Score-Counter-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating GameOver placeholder UI panels/icons, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/ui/menus/`, `ui/panels/`, `ui/buttons/`, `ui/icons/`, and `screens/`.
+- Prefer generated GameOver/result UI assets when they preserve dynamic text readability and portrait safe-area layout.
+- Treat full-screen mockups as visual references unless they are technically suitable as temporary backgrounds.
+- In the task report, state which generated assets were used or why placeholders remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Run/RunResult.cs`.
@@ -39,4 +46,3 @@ Status: pending
 - GameOver shows killed-by source.
 - Death in Room 1 before north exit shows Rooms Climbed 0.
 - Restart returns to ClassSelect.
-

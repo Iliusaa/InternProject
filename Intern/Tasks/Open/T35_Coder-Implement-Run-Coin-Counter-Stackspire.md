@@ -13,6 +13,12 @@ Status: pending
 - `GDD.md`
 - `Core/Conventions.md`
 - `Tasks/Open/T33_Coder-Implement-Room-Manager-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- If this task surfaces any coin/reward visual or debug UI, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/world/pickups/` plus `ui/icons/`.
+- Prefer generated coin/reward assets only when they do not imply physical pickup behavior that is out of MVP.
+- In the task report, state which generated asset was used, why none was needed, or why a placeholder remained necessary.
 
 ## Exact Deliverables
 - Create `Assets/Scripts/Run/RunCoinCounter.cs`.
@@ -27,4 +33,3 @@ Status: pending
 - Current-run coin count updates immediately on enemy death.
 - Current-run coins can reset at run start.
 - No pickup interaction is required.
-

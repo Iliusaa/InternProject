@@ -20,6 +20,12 @@ Status: pending
 - `Tasks/Open/T34_Coder-Implement-North-Exit-Lock-Stackspire.md`
 - `Tasks/Open/T35_Coder-Implement-Run-Coin-Counter-Stackspire.md`
 - `Tasks/Open/T36_Coder-Implement-Run-Score-Counter-Stackspire.md`
+- `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
+
+## Generated Asset Requirement
+- Before creating HUD placeholder panels/icons, check `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/ui/hud/`, `ui/icons/`, `ui/panels/`, and `ui/joysticks/`.
+- Prefer generated HUD assets when they preserve portrait safe-area layout, text readability, and combat-lane clarity.
+- In the task report, state which generated assets were used or why placeholders remained necessary.
 
 ## Exact Deliverables
 - Add placeholder HUD text under SafeAreaRoot in Game scene.
@@ -35,4 +41,3 @@ Status: pending
 - HUD displays current-run coins.
 - HUD updates when values change.
 - Central combat lane remains readable.
-
