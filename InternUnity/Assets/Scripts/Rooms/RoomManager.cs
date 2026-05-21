@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Stackspire.Combat;
 using Stackspire.Enemies;
 using Stackspire.Player;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace Stackspire.Rooms
 
         public event Action<int> RoomCleared;
         public event Action<int> RoomAdvanced;
+        public event Action<EnemyBase, DamagePayload> EnemyDied;
 
         public int CurrentRoomNumber => currentRoomNumber;
 
@@ -150,7 +152,7 @@ namespace Stackspire.Rooms
             return spawnPoints[Mathf.Clamp(index, 0, spawnPoints.Count - 1)];
         }
 
-        private void HandleEnemyDied(EnemyBase enemy, Stackspire.Combat.DamagePayload payload)
+        private void HandleEnemyDied(EnemyBase enemy, DamagePayload payload)
         {
             if (enemy != null)
             {
@@ -158,6 +160,7 @@ namespace Stackspire.Rooms
                 activeEnemies.Remove(enemy);
             }
 
+            EnemyDied?.Invoke(enemy, payload);
             CheckRoomClear();
         }
 
