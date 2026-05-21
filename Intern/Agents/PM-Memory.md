@@ -8,12 +8,13 @@ owner: "[[PM]]"
 > Codex reads **Recent** and **Lessons** every session. Archive only if investigating history.
 
 ## Recent
-- 2026-05-20 - Routed Warrior style-probe exploration to [[ArtDirector]] via `Tasks/Open/ArtDirector-Warrior-Style-Probe-Batch-Stackspire.md`; task is non-MVP generation for five prompt-linked Warrior style probes plus review and future skill seed, with no QA or integration handoff.
 - 2026-05-20 - Reconciled the completed Warrior style-probe batch as done, accepted Probe 04 as the canonical visual direction, and routed `Tasks/Open/ArtDirector-Convert-Probe04-Asset-Generation-Skill-Stackspire.md` to [[ArtDirector]] for the reusable skill document plus exactly one UI panel example.
 - 2026-05-21 - Reconciled the completed Probe04 skill task as done and routed missing Stackspire asset production to [[ArtDirector]] via `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md`; task requires Probe04 skill prompts, one object/state per PNG, per-asset prompt logs, and no QA approval gate.
+- 2026-05-21 - Normalized `MVP_First_Task_Cards.md` into actionable `Tasks/Open/T22_...` through `T42_...` handoffs, updated `TASKS.md` with pending rows and clear dependencies, and routed T23 as the first Coder implementation task.
 
 ## Archive
 - Session 0 - vault initialized, awaiting game idea
+- 2026-05-20 - Routed Warrior style-probe exploration to [[ArtDirector]] via `Tasks/Open/ArtDirector-Warrior-Style-Probe-Batch-Stackspire.md`; task is non-MVP generation for five prompt-linked Warrior style probes plus review and future skill seed, with no QA or integration handoff.
 - 2026-05-20 - Routed Unity repository hygiene to [[Coder]] via `Tasks/Open/Coder-Update-Unity-Gitignore-Stackspire.md`; task is limited to root `.gitignore` rules and explicitly forbids Unity content edits.
 - 2026-05-19 - Reconciled portrait rewrite state after BA approval and routed obsolete landscape generated asset cleanup to [[ArtDirector]] via `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`.
 - 2026-05-19 - Routed stakeholder orientation change to [[GameDesigner]] for a full portrait GDD rewrite and to [[UIUXDesigner]] for a portrait-only UI/UX rewrite gated by BA validation; paused landscape-dependent handoffs.

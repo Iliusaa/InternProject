@@ -80,7 +80,7 @@ Related: [[Conventions]] · [[Coder]]
 
 **Implementation**: Coder should implement this through the new layer setup handoff before creating Player, Enemy, Projectile, RoomBounds, and Exit prefabs. Current `TagManager.asset` still has only built-in layers and `Default` sorting layer.
 
-Related: [[Conventions]] · [[Coder]] · `Tasks/Open/Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md`
+Related: [[Conventions]] · [[Coder]] · `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md`
 
 ---
 

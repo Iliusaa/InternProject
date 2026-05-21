@@ -45,7 +45,7 @@ Outcome:
 - Unique Unity Layers per object instance are rejected for MVP.
 
 Coder follow-up:
-- Created `Tasks/Open/Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md`.
+- Created the Coder layer setup handoff now normalized as `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md`.
 - Coder should run it after MVP-001 baseline setup and before Player, Enemy, Projectile, RoomBounds, and Exit prefab cards.
 
 BA follow-up: none needed.

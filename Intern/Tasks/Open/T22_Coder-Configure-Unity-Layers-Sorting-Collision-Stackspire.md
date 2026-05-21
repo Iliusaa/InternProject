@@ -1,18 +1,31 @@
-# Coder Handoff - Configure Unity Layers, Sorting Layers, and Collision Matrix
+# T22 - Configure Unity Layers, Sorting Layers, and Collision Matrix
 
-Target agent: [[Coder]]
+Task ID: T22
+Source MVP card: Global setup dependency from `MVP_First_Task_Cards.md`
+Title: Configure Unity layers, sorting layers, and collision matrix
+Owner agent: [[Coder]]
+Status: pending
 Source: [[Architect]]
 Date: 2026-05-21
 Priority: P0
 
-## Goal
-Configure the Unity technical object grouping required by Stackspire MVP before gameplay prefabs are built.
+## Dependencies
+- T23.
+- Architect decision `D02`.
 
-## Inputs
+## Required Inputs / Docs
 - `Knowledge/decisions.md` decision `D02`
 - `Core/Conventions.md`
 - `Backlog/MVP_Architecture_Backlog.md` item `ARCH-BL-003`
 - `Tasks/Open/MVP_First_Task_Cards.md`
+
+## Exact Deliverables
+- Configure the Unity technical object grouping required by Stackspire MVP before gameplay prefabs are built.
+- Add required Unity Layers.
+- Add required Sorting Layers.
+- Configure the Physics2D collision matrix.
+- Keep tags minimal.
+- Create or reserve prefab folder groups under `InternUnity/Assets/Prefabs/`.
 
 ## Required Unity Layers
 - `Player`
@@ -65,9 +78,6 @@ Create or reserve these folders under `InternUnity/Assets/Prefabs/` when the bas
 - Physics2D collision matrix matches the rule above.
 - No unique Unity Layer is created for individual object instances.
 - Coder documents any Unity limitation or layer-name conflict found during setup.
-
-## Dependencies
-- MVP-001 Unity project audit and baseline setup.
 
 ## Out Of Scope
 - Gameplay components.

@@ -28,6 +28,7 @@ last_updated: "2026-05-21"
 - [x] First MVP implementation task cards created at `Tasks/Open/MVP_First_Task_Cards.md`
 - [x] Superseded Architect implementation-card handoffs archived under `Tasks/Archive/`
 - [x] Unity object-layer technical plan resolved by [[Architect]] in decision `D02`; Coder setup handoff created
+- [x] `MVP_First_Task_Cards.md` normalized into actionable task files `T22` through `T42` under `Tasks/Open/`
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]
@@ -38,8 +39,10 @@ last_updated: "2026-05-21"
 - [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md` for a direct missing-asset production pass using the Probe04 skill
 - [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`
 - [ ] Run [[UIUXDesigner]] on `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md`
-- [ ] Run [[Coder]] on `Tasks/Open/Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after MVP-001 baseline setup and before prefab implementation
-- [ ] Use `Tasks/Open/MVP_First_Task_Cards.md` for first Coder implementation handoffs
+- [ ] Run [[Coder]] on `Tasks/Open/T23_Coder-Audit-Unity-Baseline-Stackspire.md` as the first MVP implementation task
+- [ ] Run [[Coder]] on `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after T23 and before prefab implementation
+- [ ] Use decomposed `Tasks/Open/T24_...` through `Tasks/Open/T41_...` for first Coder implementation handoffs
+- [ ] Run [[QA]] on `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md` after T40 GameOver flow exists
 - [ ] Run [[ArtDirector]] on `Tasks/Open/UIUX_Art_Asset_Request.md` only after portrait asset requirements are reconciled
 - [ ] Use `Tasks/Open/UIUX_Unity_Implementation.md` as supporting UI context after first MVP task cards begin implementation
 - [ ] Use `Tasks/Open/UIUX_QA_Checklist.md` after UI implementation exists

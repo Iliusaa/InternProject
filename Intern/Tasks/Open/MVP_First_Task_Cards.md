@@ -2,7 +2,7 @@
 
 ## Global Setup Dependency
 
-After MVP-001 and before any Player, Enemy, Projectile, RoomBounds, Exit, or gameplay prefab implementation, run `Tasks/Open/Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md`. It implements Architect decision `D02` for Unity Layers, Sorting Layers, tags, prefab groups, and the Physics2D collision matrix.
+After MVP-001 and before any Player, Enemy, Projectile, RoomBounds, Exit, or gameplay prefab implementation, run `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md`. It implements Architect decision `D02` for Unity Layers, Sorting Layers, tags, prefab groups, and the Physics2D collision matrix.
 
 # MVP-001
 
