@@ -29,6 +29,7 @@ last_updated: "2026-05-21"
 - [x] Superseded Architect implementation-card handoffs archived under `Tasks/Archive/`
 - [x] Unity object-layer technical plan resolved by [[Architect]] in decision `D02`; Coder setup handoff created
 - [x] `MVP_First_Task_Cards.md` normalized into actionable task files `T22` through `T42` under `Tasks/Open/`
+- [x] BA Coder kickoff clarifications documented and approved in `Tasks/Done/BA-Coder-Kickoff-Clarifications-Stackspire-MVP-2026-05-21.md`
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]
