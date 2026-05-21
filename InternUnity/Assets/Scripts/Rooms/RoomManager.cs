@@ -20,6 +20,7 @@ namespace Stackspire.Rooms
         private bool initialRoomSpawned;
 
         public event Action<int> RoomCleared;
+        public event Action<int> RoomAdvanced;
 
         public int CurrentRoomNumber => currentRoomNumber;
 
@@ -71,19 +72,72 @@ namespace Stackspire.Rooms
 
             for (int i = 0; i < roomOneGruntCount; i++)
             {
-                Transform spawnPoint = GetSpawnPoint(i);
-                EnemyBase enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, transform);
-                enemy.Died += HandleEnemyDied;
-                activeEnemies.Add(enemy);
-
-                GruntChase gruntChase = enemy.GetComponent<GruntChase>();
-                if (gruntChase != null && playerTarget != null)
-                {
-                    gruntChase.SetTarget(playerTarget);
-                }
+                SpawnEnemyAt(i);
             }
 
             CheckRoomClear();
+        }
+
+        /// <summary>
+        /// Advances to the next room and respawns the current first-slice enemy set.
+        /// </summary>
+        public void AdvanceRoom()
+        {
+            if (!roomClearFired)
+            {
+                return;
+            }
+
+            currentRoomNumber++;
+            RoomAdvanced?.Invoke(currentRoomNumber);
+            SpawnCurrentRoom();
+        }
+
+        private void SpawnCurrentRoom()
+        {
+            ClearActiveEnemies();
+            roomClearFired = false;
+
+            if (enemyPrefab == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < roomOneGruntCount; i++)
+            {
+                SpawnEnemyAt(i);
+            }
+
+            CheckRoomClear();
+        }
+
+        private void SpawnEnemyAt(int spawnIndex)
+        {
+            Transform spawnPoint = GetSpawnPoint(spawnIndex);
+            EnemyBase enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, transform);
+            enemy.Died += HandleEnemyDied;
+            activeEnemies.Add(enemy);
+
+            GruntChase gruntChase = enemy.GetComponent<GruntChase>();
+            if (gruntChase != null && playerTarget != null)
+            {
+                gruntChase.SetTarget(playerTarget);
+            }
+        }
+
+        private void ClearActiveEnemies()
+        {
+            for (int i = activeEnemies.Count - 1; i >= 0; i--)
+            {
+                EnemyBase enemy = activeEnemies[i];
+                if (enemy != null)
+                {
+                    enemy.Died -= HandleEnemyDied;
+                    Destroy(enemy.gameObject);
+                }
+            }
+
+            activeEnemies.Clear();
         }
 
         private Transform GetSpawnPoint(int index)

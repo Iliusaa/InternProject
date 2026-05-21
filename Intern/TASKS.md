@@ -36,7 +36,7 @@
 | T31 | Implement enemy base | Coder | done | T22; T30 | Completed: `Tasks/Done/T31_Coder-Implement-Enemy-Base-Stackspire.md`; created `EnemyBase`, generated Grunt placeholder prefab, damage receiving, health/death events, and one-shot death handling |
 | T32 | Implement Grunt chase | Coder | done | T31 | Completed: `Tasks/Done/T32_Coder-Implement-Grunt-Chase-Stackspire.md`; created `GruntChase`, Grunt prefab, Rigidbody2D target chase, contact damage, and `Grunt` damage source label |
 | T33 | Implement room manager | Coder | done | T32 | Completed: `Tasks/Done/T33_Coder-Implement-Room-Manager-Stackspire.md`; created `RoomManager`, wired Game scene spawn points, spawns 2 Room 1 Grunts, tracks active enemies, and fires room clear once |
-| T34 | Implement north exit lock | Coder | pending | T22; T33 | Handoff: `Tasks/Open/T34_Coder-Implement-North-Exit-Lock-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-012 |
+| T34 | Implement north exit lock | Coder | done | T22; T33 | Completed: `Tasks/Done/T34_Coder-Implement-North-Exit-Lock-Stackspire.md`; created `NorthExit`, locked/unlocked visuals, room-clear unlock, player advance trigger, room increment, and respawn flow |
 | T35 | Implement run coin counter | Coder | pending | T33 | Handoff: `Tasks/Open/T35_Coder-Implement-Run-Coin-Counter-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-013 |
 | T36 | Implement run score counter | Coder | pending | T33; T34 | Handoff: `Tasks/Open/T36_Coder-Implement-Run-Score-Counter-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-014 |
 | T37 | Implement Game HUD prototype | Coder | pending | T26; T34; T35; T36 | Handoff: `Tasks/Open/T37_Coder-Implement-Game-HUD-Prototype-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-015 |
