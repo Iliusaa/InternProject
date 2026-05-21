@@ -20,6 +20,7 @@ last_updated: "2026-05-21"
 - [x] Portrait-only GDD rewrite approved by [[BA]] with 1080 x 1920 bounds
 - [x] Portrait-only UI/UX spec rewrite completed in `Docs/UIUX_MVP_SPEC.md`
 - [x] Root Unity `.gitignore` created and verified by [[Coder]] without QA handoff
+- [x] UnityMCP connection verified by [[Coder]] and reusable external bridge added under `Bridge/`
 - [x] Warrior style-probe exploration completed by [[ArtDirector]]; Probe 04 mobile-grotesque approved as canonical visual direction
 - [x] Probe 04 reusable asset-generation skill completed by [[ArtDirector]] with one UI panel example
 
@@ -35,7 +36,6 @@ last_updated: "2026-05-21"
 - [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`
 - [ ] Run [[UIUXDesigner]] on `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md`
 - [ ] Run [[Architect]] on `Tasks/Open/Architect-Create-Portrait-MVP-Implementation-Cards-Stackspire.md`
-- [ ] Run [[Coder]] on `Tasks/Open/Coder-Check-UnityMCP-Connection-Stackspire.md` to verify UnityMCP connectivity before implementation work continues
 - [ ] Run [[Architect]] on `Tasks/Open/Architect-Clarify-Object-Layer-Rule-Stackspire.md`
 - [ ] Run [[ArtDirector]] on `Tasks/Open/UIUX_Art_Asset_Request.md` only after portrait asset requirements are reconciled
 - [ ] Use `Tasks/Open/UIUX_Unity_Implementation.md` after Architect decomposes portrait implementation cards

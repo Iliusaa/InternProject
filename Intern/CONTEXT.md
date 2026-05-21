@@ -18,7 +18,7 @@ architecture_notes: Portrait implementation cards are pending under `Tasks/Open/
 - [[ArtDirector]] should remove obsolete landscape generated assets from `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`.
 - [[UIUXDesigner]] should rebuild portrait asset specs from `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md` before new ArtDirector generation.
 - [[Architect]] should create portrait implementation cards from `Tasks/Open/Architect-Create-Portrait-MVP-Implementation-Cards-Stackspire.md`.
-- [[Coder]] should verify UnityMCP connectivity from `Tasks/Open/Coder-Check-UnityMCP-Connection-Stackspire.md`.
+- [[Coder]] verified UnityMCP connectivity and added the reusable external bridge under `Bridge/`; report is in `Tasks/Done/Coder-Check-UnityMCP-Connection-Stackspire.md`.
 - [[Architect]] should define the Unity object-layer technical plan from `Tasks/Open/Architect-Clarify-Object-Layer-Rule-Stackspire.md`.
 - [[GameDesigner]], [[BA]], and [[UIUXDesigner]] portrait rewrite tasks are complete unless reopened by PM.
 - The old `Tasks/Open/Architect-Create-MVP-Implementation-Cards-Stackspire.md` is superseded by the portrait implementation-card handoff.
