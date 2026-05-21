@@ -22,7 +22,8 @@
 | T17 | Remove obsolete landscape generated assets | ArtDirector | pending | Portrait GDD and UI/UX pivot | Handoff: `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`; delete only confirmed obsolete layout assets and hand off broken references to Coder |
 | T18 | Update Unity gitignore rules | Coder | done | - | Completed by Coder; report: `Tasks/Done/Coder-Update-Unity-Gitignore-Stackspire.md`; no QA handoff per user instruction |
 | T19 | Generate Warrior style probe batch | ArtDirector | done | Approved dark-fantasy art direction and existing MVP character references | Completed by ArtDirector; report: `Tasks/Done/ArtDirector-Warrior-Style-Probe-Batch-Stackspire.md`; approved anchor: `Assets/Generated/StyleProbes/warrior/warrior_style_probe_04_mobile_grotesque.png` |
-| T20 | Convert Probe 04 into reusable asset-generation skill | ArtDirector | pending | T19 complete; Probe 04 approved as canonical style anchor | Handoff: `Tasks/Open/ArtDirector-Convert-Probe04-Asset-Generation-Skill-Stackspire.md`; create reusable skill document plus exactly one UI panel example and prompt |
+| T20 | Convert Probe 04 into reusable asset-generation skill | ArtDirector | done | T19 complete; Probe 04 approved as canonical style anchor | Completed by ArtDirector; report: `Tasks/Done/ArtDirector-Convert-Probe04-Asset-Generation-Skill-Stackspire.md`; reusable skill: `Assets/Generated/StyleProbes/warrior/stackspire_probe04_asset_generation_skill.md`; example panel: `Assets/Generated/StyleProbes/warrior/probe04_ui_panel_example.png` |
+| T21 | Generate missing Stackspire assets using Probe04 asset skill | ArtDirector | pending | T20 complete; Probe04 skill and style anchor available | Handoff: `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md`; direct production pass for missing gameplay/UI assets under `Assets/Generated/`; one object/state per PNG; prompt logs required; no QA handoff |
 
 ---
 

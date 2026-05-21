@@ -3,7 +3,7 @@ project: "Stackspire"
 phase: "portrait downstream reset"
 sprint: 0
 build: "none"
-last_updated: "2026-05-20"
+last_updated: "2026-05-21"
 ---
 
 # STATUS
@@ -21,18 +21,17 @@ last_updated: "2026-05-20"
 - [x] Portrait-only UI/UX spec rewrite completed in `Docs/UIUX_MVP_SPEC.md`
 - [x] Root Unity `.gitignore` created and verified by [[Coder]] without QA handoff
 - [x] Warrior style-probe exploration completed by [[ArtDirector]]; Probe 04 mobile-grotesque approved as canonical visual direction
+- [x] Probe 04 reusable asset-generation skill completed by [[ArtDirector]] with one UI panel example
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]
 - [ ] Portrait asset-spec rebuild pending [[UIUXDesigner]]
 - [ ] Portrait implementation-card creation pending [[Architect]]
-- [ ] Landscape-dependent art generation remains paused until portrait asset specs are rebuilt
 - [ ] Unity object-layer technical plan pending [[Architect]]
-- [ ] MVP art and implementation handoffs blocked from execution until portrait asset specs and implementation cards are refreshed
-- [ ] Probe 04 reusable asset-generation skill routed to [[ArtDirector]]
+- [ ] Missing Stackspire asset production pass routed to [[ArtDirector]] using the Probe04 skill
 
 ## Next
-- [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Convert-Probe04-Asset-Generation-Skill-Stackspire.md` to create the official reusable Probe 04 skill document and one UI panel example
+- [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md` for a direct missing-asset production pass using the Probe04 skill
 - [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`
 - [ ] Run [[UIUXDesigner]] on `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md`
 - [ ] Run [[Architect]] on `Tasks/Open/Architect-Create-Portrait-MVP-Implementation-Cards-Stackspire.md`
@@ -46,7 +45,7 @@ last_updated: "2026-05-20"
 - Unity object-layer setup is a technical implementation blocker until [[Architect]] defines concrete layers, sorting layers, collision layers, tags, or prefab grouping.
 - `Docs/AssetSpecs/` and `Tasks/Open/UIUX_Art_Asset_Request.md` still contain old landscape sizing and must be rebuilt before new production UI art generation.
 - Existing generated landscape UI/HUD/screen assets must be audited and removed or marked deprecated before portrait QA.
-- Production MVP art generation remains blocked by portrait asset-spec reconciliation, but the Probe 04 reusable skill task is explicitly style-system work and must not replace or integrate MVP assets.
+- The legacy `Tasks/Open/UIUX_Art_Asset_Request.md` remains blocked by portrait asset-spec reconciliation. The direct Probe04 missing-asset production pass in `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md` is allowed to fill empty/missing generated folders without QA approval and must not overwrite approved MVP assets.
 
 ---
 
