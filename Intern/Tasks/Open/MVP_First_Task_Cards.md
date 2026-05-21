@@ -6,6 +6,10 @@ After MVP-001 and before any Player, Enemy, Projectile, RoomBounds, Exit, or gam
 
 # MVP-001
 
+## Status
+
+Done on 2026-05-21. Audit note: `Intern/Docs/MVP-001_Unity_Baseline_Audit.md`.
+
 ## Goal
 
 Audit the current `InternUnity/` project and establish a clean runnable baseline for MVP implementation.
@@ -53,6 +57,10 @@ None.
 - Final project settings polish.
 
 # MVP-002
+
+## Status
+
+Done on 2026-05-21. Created `MainMenu`, `ClassSelect`, `Game`, and `GameOver` scene flow skeleton with `SceneNavigator`.
 
 ## Goal
 
@@ -107,6 +115,10 @@ Enter Play Mode from MainMenu and click through MainMenu -> ClassSelect -> Game 
 - Save data.
 
 # MVP-003
+
+## Status
+
+Done on 2026-05-21. Created `Assets/Prefabs/UI/PortraitCanvasRoot.prefab` and verified MVP scene Canvas roots use 1080 x 1920 Scale With Screen Size settings.
 
 ## Goal
 
