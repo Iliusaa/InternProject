@@ -31,7 +31,7 @@
 | T26 | Implement safe-area root | Coder | pending | T25 | Handoff: `Tasks/Open/T26_Coder-Implement-Safe-Area-Root-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-004 |
 | T27 | Implement virtual joystick | Coder | pending | T26 | Handoff: `Tasks/Open/T27_Coder-Implement-Virtual-Joystick-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-005 |
 | T28 | Create player input reader | Coder | done | T27 | Completed: `Tasks/Done/T28_Coder-Create-Player-Input-Reader-Stackspire.md`; created `PlayerInputReader`, wired Game scene joysticks, and added editor keyboard/mouse fallback |
-| T29 | Implement player movement | Coder | pending | T22; T28 | Handoff: `Tasks/Open/T29_Coder-Implement-Player-Movement-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-007 |
+| T29 | Implement player movement | Coder | done | T22; T28 | Completed: `Tasks/Done/T29_Coder-Implement-Player-Movement-Stackspire.md`; created `PlayerMovement`, Player prefab, generated warrior sprite import, and wired Game scene player input |
 | T30 | Implement player health and damage | Coder | pending | T29 | Handoff: `Tasks/Open/T30_Coder-Implement-Player-Health-Damage-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-008 |
 | T31 | Implement enemy base | Coder | pending | T22; T30 | Handoff: `Tasks/Open/T31_Coder-Implement-Enemy-Base-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-009 |
 | T32 | Implement Grunt chase | Coder | pending | T31 | Handoff: `Tasks/Open/T32_Coder-Implement-Grunt-Chase-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-010 |
