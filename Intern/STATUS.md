@@ -23,26 +23,29 @@ last_updated: "2026-05-21"
 - [x] UnityMCP connection verified by [[Coder]] and reusable external bridge added under `Bridge/`
 - [x] Warrior style-probe exploration completed by [[ArtDirector]]; Probe 04 mobile-grotesque approved as canonical visual direction
 - [x] Probe 04 reusable asset-generation skill completed by [[ArtDirector]] with one UI panel example
+- [x] MVP workflow roadmap created at `Roadmaps/MVP_Workflow_Roadmap.md`
+- [x] MVP architecture backlog created at `Backlog/MVP_Architecture_Backlog.md`
+- [x] First MVP implementation task cards created at `Tasks/Open/MVP_First_Task_Cards.md`
+- [x] Superseded Architect implementation-card handoffs archived under `Tasks/Archive/`
+- [x] Unity object-layer technical plan resolved by [[Architect]] in decision `D02`; Coder setup handoff created
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]
 - [ ] Portrait asset-spec rebuild pending [[UIUXDesigner]]
-- [ ] Portrait implementation-card creation pending [[Architect]]
-- [ ] Unity object-layer technical plan pending [[Architect]]
 - [ ] Missing Stackspire asset production pass routed to [[ArtDirector]] using the Probe04 skill
 
 ## Next
 - [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md` for a direct missing-asset production pass using the Probe04 skill
 - [ ] Run [[ArtDirector]] on `Tasks/Open/ArtDirector-Remove-Obsolete-Landscape-Assets-Stackspire.md`
 - [ ] Run [[UIUXDesigner]] on `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md`
-- [ ] Run [[Architect]] on `Tasks/Open/Architect-Create-Portrait-MVP-Implementation-Cards-Stackspire.md`
-- [ ] Run [[Architect]] on `Tasks/Open/Architect-Clarify-Object-Layer-Rule-Stackspire.md`
+- [ ] Run [[Coder]] on `Tasks/Open/Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after MVP-001 baseline setup and before prefab implementation
+- [ ] Use `Tasks/Open/MVP_First_Task_Cards.md` for first Coder implementation handoffs
 - [ ] Run [[ArtDirector]] on `Tasks/Open/UIUX_Art_Asset_Request.md` only after portrait asset requirements are reconciled
-- [ ] Use `Tasks/Open/UIUX_Unity_Implementation.md` after Architect decomposes portrait implementation cards
+- [ ] Use `Tasks/Open/UIUX_Unity_Implementation.md` as supporting UI context after first MVP task cards begin implementation
 - [ ] Use `Tasks/Open/UIUX_QA_Checklist.md` after UI implementation exists
 
 ## Blockers
-- Unity object-layer setup is a technical implementation blocker until [[Architect]] defines concrete layers, sorting layers, collision layers, tags, or prefab grouping.
+- Unity object-layer setup remains a Coder project-settings task before gameplay prefab work, but the Architect decision blocker is resolved in `D02`.
 - `Docs/AssetSpecs/` and `Tasks/Open/UIUX_Art_Asset_Request.md` still contain old landscape sizing and must be rebuilt before new production UI art generation.
 - Existing generated landscape UI/HUD/screen assets must be audited and removed or marked deprecated before portrait QA.
 - The legacy `Tasks/Open/UIUX_Art_Asset_Request.md` remains blocked by portrait asset-spec reconciliation. The direct Probe04 missing-asset production pass in `Tasks/Open/ArtDirector-Generate-Missing-Stackspire-Assets-Probe04.md` is allowed to fill empty/missing generated folders without QA approval and must not overwrite approved MVP assets.

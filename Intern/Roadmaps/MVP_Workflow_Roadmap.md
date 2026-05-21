@@ -7,7 +7,7 @@ Stackspire is a portrait-only Android roguelite tower climber. The approved sour
 Current project state:
 - The portrait GDD is BA-approved and uses 1080 x 1920 as the active reference frame.
 - The portrait UI/UX MVP spec is complete and implementation-ready.
-- Open routing includes Architect handoffs for portrait implementation decomposition and Unity object-layer clarification.
+- Open routing includes first MVP implementation cards plus a Coder handoff for Unity layer, sorting layer, and collision-matrix setup.
 - Some older open handoffs still reflect pre-portrait or landscape assumptions and must be treated as superseded unless reconciled.
 - `InternUnity/` exists as a Unity 2D URP project with default project structure, SampleScene, default Input System actions, URP 2D settings, and no visible gameplay implementation yet.
 
@@ -16,7 +16,7 @@ MVP goal:
 
 Current implementation maturity:
 - Product/design maturity is high: core rules, UI/UX flow, mobile layout, scoring, coin economy, death flow, and upgrade requirements are specified.
-- Architecture maturity is early: Unity layers, scene structure, prefab boundaries, runtime services, and implementation decomposition still need Architect decisions.
+- Architecture maturity is early: Unity layer rules are decided, while scene structure, prefab boundaries, runtime services, and implementation details still need Coder integration through the active cards.
 - Code maturity is baseline: the Unity project is present but gameplay/UI systems have not yet been implemented.
 - Art maturity is partial: portrait asset specs and generated assets require reconciliation before final asset production.
 
@@ -303,7 +303,7 @@ Exit criteria:
 
 ## 6. Risks & Blockers
 
-- Unity object-layer setup is unresolved until Architect defines concrete layers, sorting layers, collision matrix, tags, and prefab grouping.
+- Unity object-layer planning is resolved by Architect decision `D02`; Coder still must apply the project settings before gameplay prefab work.
 - `InternUnity/` is still near-baseline, so implementation risk is concentrated in first integration passes.
 - Existing project settings still show default landscape/window assumptions and must be corrected for portrait Android.
 - Older open handoffs may contain obsolete landscape requirements and must not drive implementation.
