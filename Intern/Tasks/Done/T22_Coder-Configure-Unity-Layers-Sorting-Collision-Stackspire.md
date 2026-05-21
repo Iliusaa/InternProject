@@ -4,10 +4,20 @@ Task ID: T22
 Source MVP card: Global setup dependency from `MVP_First_Task_Cards.md`
 Title: Configure Unity layers, sorting layers, and collision matrix
 Owner agent: [[Coder]]
-Status: pending
+Status: done
 Source: [[Architect]]
 Date: 2026-05-21
 Priority: P0
+
+## Completion
+Done on 2026-05-21.
+
+- Added required Unity Layers in slots 8-14: `Player`, `Enemy`, `PlayerProjectile`, `EnemyProjectile`, `RoomBounds`, `Exit`, `PickupOrReward`.
+- Added required Sorting Layers after `Default`: `Background`, `RoomFloor`, `RoomProps`, `Characters`, `Projectiles`, `VFX`, `Foreground`, `UI`.
+- Configured the Physics2D collision matrix to the D02 MVP rule.
+- Kept tags unchanged; no `Player` tag was needed for current scene wiring.
+- Created/reserved prefab folders under `InternUnity/Assets/Prefabs/`: `Player`, `Enemies`, `Projectiles`, `Rooms`, `UI`, `VFX`, `Debug`.
+- No Unity layer-name conflicts were found.
 
 ## Dependencies
 - T23.
