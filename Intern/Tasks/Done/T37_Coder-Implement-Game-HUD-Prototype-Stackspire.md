@@ -4,7 +4,32 @@ Task ID: T37
 Source MVP card: MVP-015
 Title: Implement basic Game HUD prototype
 Owner agent: [[Coder]]
-Status: pending
+Status: done
+
+## Completion
+
+Done on 2026-05-22.
+
+- Created `InternUnity/Assets/Scripts/UI/GameHudBinder.cs`.
+- Added `GameplayHudRoot` under `SafeAreaRoot` in `InternUnity/Assets/Scenes/Game.unity`.
+- Added placeholder HUD text for Hearts, Score, Room, and Coins in portrait-safe top zones.
+- Wired `GameHudBinder` to `PlayerHealth`, `RunScoreCounter`, `RunCoinCounter`, and `RoomManager`.
+- HUD updates through gameplay events for health, score, current-run coins, and room advancement.
+- Kept HUD text at the top edge so the central combat lane and lower joystick zones remain clear.
+
+## Generated Asset Usage
+
+- Checked generated HUD/icon/panel/joystick assets in `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/ui/`.
+- No new generated HUD art was used for this task because the exact deliverable called for placeholder HUD text, and the existing generated assets either were not imported into Unity or were for buttons, panels, icons, and joystick art rather than required dynamic text labels.
+
+## Verification
+
+- Validated `GameHudBinder.cs` with Unity script validation: 0 errors, 0 warnings.
+- Saved `InternUnity/Assets/Scenes/Game.unity` after adding and wiring the HUD.
+- Verified initial HUD values: `Hearts 5/5`, `Score 0000`, `Room 1`, `Coins 000`.
+- Verified score, room, and coin event updates: score changed to `Score 0020`, room changed to `Room 2`, coins changed to `Coins 001`.
+- Verified health event update: hearts changed from `Hearts 5/5` to `Hearts 3/5` after damage.
+- Checked Unity console after implementation: 0 errors, 0 warnings.
 
 ## Dependencies
 - T26.
