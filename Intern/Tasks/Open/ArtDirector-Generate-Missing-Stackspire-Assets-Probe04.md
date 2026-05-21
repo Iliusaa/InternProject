@@ -9,7 +9,16 @@ Deadline: Ongoing production pass
 ## Resume Tracker
 
 LAST COMPLETED STEP: 2026-05-21 ArtDirector production chunk 1 generated 13 isolated Probe04 MVP assets with matching `.prompt.md` logs: primary button default, stone panel default, class card default, currency chip default, movement joystick idle base, upgrade row default, pause overlay panel default, game-over stat panel normal, lit torch prop, locked north exit, coin reward default, Warrior slash VFX default, and single stone floor slab.
-NEXT STEP TO EXECUTE: Continue the missing-asset pass by generating remaining one-state-per-PNG assets and states under `Assets/Generated/`, especially additional button states, class-card states, joystick states/thumbs, remaining HUD frames, world doors/props, pickups, VFX, and any other empty/missing folders allowed by the one-object/no-full-scene rules.
+NEXT STEP TO EXECUTE: Continue under the 2026-05-21 stakeholder clarification: reusable sprite/UI assets still use one object per PNG and one state per PNG, but HUDs, full UI screens, overlays, inventory layouts, menu compositions, complete gameplay interface mockups, reward screens, shop screens, loading screens, and meta-progression screens are allowed and required as compositional screen deliverables. Generate the remaining full-screen Probe04 UI/HUD mockups under `Assets/Generated/MVP/screens/`, with `.prompt.md` logs.
+
+## Clarification - Screen Composition Exception
+
+Stakeholder clarification received 2026-05-21:
+
+- The one object per PNG rule applies to isolated gameplay assets and reusable UI elements only.
+- HUDs, full UI screens, overlays, inventory layouts, menu compositions, complete gameplay interface mockups, reward screens, character selection screens, dungeon UI layouts, combat HUD compositions, shop screens, card/reward interfaces, loading screens, and meta-progression screens are compositional interface deliverables and may contain multiple UI elements in one image.
+- Screen mockups must still use the Probe04 visual language: thick black ink outlines, chunky grotesque readability, scuffed painterly texture, grim mobile readability, no copied external UI layouts, no ornate fantasy filigree, no realistic glossy rendering.
+- Reusable elements should still exist separately where applicable.
 
 If resuming after a context limit: check the tracker above. Skip completed steps and continue from NEXT STEP TO EXECUTE. Always reload Phase 0 references before generation.
 
