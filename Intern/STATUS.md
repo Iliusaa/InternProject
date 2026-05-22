@@ -35,6 +35,7 @@ last_updated: "2026-05-22"
 - [x] `T38` class selection state completed by [[Coder]]; ClassSelect can choose Warrior, Archer, or Mage and Game can read the selected class through runtime state
 - [x] `T39` Warrior attack prototype completed by [[Coder]]; Player can damage enemies inside a short 180-degree aim arc with generated slash feedback
 - [x] `T40` GameOver flow completed by [[Coder]]; player death captures score, rooms climbed, run coins, placeholder banked coins, and killed-by source, then loads GameOver with Restart and Main Menu navigation
+- [x] `T41` save system stub completed by [[Coder]]; PlayerPrefs JSON persistence stores high score, banked coins, upgrade levels, and class special flags, and GameOver deposits run results through the service
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]

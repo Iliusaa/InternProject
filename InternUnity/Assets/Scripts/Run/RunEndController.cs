@@ -1,6 +1,7 @@
 using Stackspire.Combat;
 using Stackspire.Player;
 using Stackspire.Rooms;
+using Stackspire.Save;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,6 @@ namespace Stackspire.Run
         [SerializeField] private RunCoinCounter coinCounter;
         [SerializeField] private RoomManager roomManager;
         [SerializeField] private string gameOverSceneName = "GameOver";
-        [SerializeField] private int placeholderExistingBankedCoins;
 
         private bool runEnded;
 
@@ -39,8 +39,6 @@ namespace Stackspire.Run
             {
                 roomManager = UnityEngine.Object.FindFirstObjectByType<RoomManager>();
             }
-
-            placeholderExistingBankedCoins = Mathf.Max(0, placeholderExistingBankedCoins);
         }
 
         private void OnEnable()
@@ -49,11 +47,6 @@ namespace Stackspire.Run
             {
                 playerHealth.Died += HandlePlayerDied;
             }
-        }
-
-        private void OnValidate()
-        {
-            placeholderExistingBankedCoins = Mathf.Max(0, placeholderExistingBankedCoins);
         }
 
         private void OnDisable()
@@ -73,9 +66,10 @@ namespace Stackspire.Run
 
             runEnded = true;
             int currentRunCoins = coinCounter == null ? 0 : coinCounter.CurrentRunCoins;
-            int totalBankedCoins = placeholderExistingBankedCoins + currentRunCoins;
+            int finalScore = scoreCounter == null ? 0 : scoreCounter.CurrentRunScore;
+            int totalBankedCoins = SaveService.DepositRunResult(finalScore, currentRunCoins);
             RunResult result = new RunResult(
-                scoreCounter == null ? 0 : scoreCounter.CurrentRunScore,
+                finalScore,
                 GetRoomsClimbed(),
                 currentRunCoins,
                 totalBankedCoins,
