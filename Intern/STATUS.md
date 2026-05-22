@@ -34,6 +34,7 @@ last_updated: "2026-05-22"
 - [x] `T28` player input reader completed by [[Coder]]; `PlayerInputReader` exposes movement, aim, and attack-held values from joysticks with editor keyboard/mouse fallback
 - [x] `T38` class selection state completed by [[Coder]]; ClassSelect can choose Warrior, Archer, or Mage and Game can read the selected class through runtime state
 - [x] `T39` Warrior attack prototype completed by [[Coder]]; Player can damage enemies inside a short 180-degree aim arc with generated slash feedback
+- [x] `T40` GameOver flow completed by [[Coder]]; player death captures score, rooms climbed, run coins, placeholder banked coins, and killed-by source, then loads GameOver with Restart and Main Menu navigation
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]
@@ -46,9 +47,8 @@ last_updated: "2026-05-22"
 - [ ] Run [[UIUXDesigner]] on `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md`
 - [ ] Run [[Coder]] on `Tasks/Open/T23_Coder-Audit-Unity-Baseline-Stackspire.md` as the first MVP implementation task
 - [ ] Run [[Coder]] on `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after T23 and before prefab implementation
-- [ ] Run [[Coder]] on `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md` now that combat and run counters exist
 - [ ] Use decomposed `Tasks/Open/T24_...` through `Tasks/Open/T41_...` for first Coder implementation handoffs
-- [ ] Run [[QA]] on `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md` after T40 GameOver flow exists
+- [ ] Run [[QA]] on `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md` now that T40 GameOver flow exists
 - [ ] Run [[ArtDirector]] on `Tasks/Open/UIUX_Art_Asset_Request.md` only after portrait asset requirements are reconciled
 - [ ] Use `Tasks/Open/UIUX_Unity_Implementation.md` as supporting UI context after first MVP task cards begin implementation
 - [ ] Use `Tasks/Open/UIUX_QA_Checklist.md` after UI implementation exists
