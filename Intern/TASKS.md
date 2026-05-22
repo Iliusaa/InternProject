@@ -41,7 +41,7 @@
 | T36 | Implement run score counter | Coder | done | T33; T34 | Completed: `Tasks/Done/T36_Coder-Implement-Run-Score-Counter-Stackspire.md`; adds enemy death and room-clear score events |
 | T37 | Implement Game HUD prototype | Coder | done | T26; T34; T35; T36 | Completed: `Tasks/Done/T37_Coder-Implement-Game-HUD-Prototype-Stackspire.md`; binds Hearts, Score, Room, and Coins HUD labels |
 | T38 | Implement class selection state | Coder | done | T24 | Completed: `Tasks/Done/T38_Coder-Implement-Class-Selection-State-Stackspire.md`; runtime class selection now flows from ClassSelect to Game |
-| T39 | Implement Warrior attack prototype | Coder | pending | T28; T31; T38 | Handoff: `Tasks/Open/T39_Coder-Implement-Warrior-Attack-Prototype-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-017 |
+| T39 | Implement Warrior attack prototype | Coder | done | T28; T31; T38 | Completed: `Tasks/Done/T39_Coder-Implement-Warrior-Attack-Prototype-Stackspire.md`; Warrior melee attack now damages enemies inside a 180-degree aim arc |
 | T40 | Implement GameOver flow | Coder | pending | T30; T34; T35; T36 | Handoff: `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-018 |
 | T41 | Implement save system stub | Coder | pending | T23 | Handoff: `Tasks/Open/T41_Coder-Implement-Save-System-Stub-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-019 |
 | T42 | Create vertical-slice QA checklist | QA | pending | T40 | Handoff: `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-020 |

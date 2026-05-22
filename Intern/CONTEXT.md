@@ -21,7 +21,8 @@ architecture_notes: First implementation cards were normalized into individual `
 - [[Coder]] completed `T43` at `Tasks/Done/T43_Coder-Audit-Completed-T-Generated-Assets-Stackspire.md`: imported generated primary button and joystick base sprites into `InternUnity/Assets/Generated/`, integrated them into current scene buttons and `VirtualJoystick`, and documented missing `ui_joystick_thumb` art.
 - [[Coder]] completed `T28` at `Tasks/Done/T28_Coder-Create-Player-Input-Reader-Stackspire.md`: `PlayerInputReader` now exposes movement, aim, and attack-held values, supports mobile joysticks, and has editor keyboard/mouse fallback wired in `Game.unity`.
 - [[Coder]] completed `T38` at `Tasks/Done/T38_Coder-Implement-Class-Selection-State-Stackspire.md`: ClassSelect now selects Warrior, Archer, or Mage through runtime `ClassSelectionState`, and Game has a temporary selected-class debug label.
-- [[Coder]] should run `Tasks/Open/T39_Coder-Implement-Warrior-Attack-Prototype-Stackspire.md` next; its `T28`, `T31`, and `T38` dependencies are now satisfied.
+- [[Coder]] completed `T39` at `Tasks/Done/T39_Coder-Implement-Warrior-Attack-Prototype-Stackspire.md`: Player now has `WarriorAttack`, uses aim-held cooldown attacks, damages enemies inside a short 180-degree arc, and flashes the generated Warrior slash sprite.
+- [[Coder]] should run `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md` next; its `T30`, `T34`, `T35`, and `T36` dependencies are satisfied.
 - [[Coder]] should run `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after T23 and before Player, Enemy, Projectile, RoomBounds, and Exit prefab implementation.
 - [[QA]] should use `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md` after T40 GameOver flow exists.
 - [[Coder]] verified UnityMCP connectivity and added the reusable external bridge under `Bridge/`; report is in `Tasks/Done/Coder-Check-UnityMCP-Connection-Stackspire.md`.

@@ -4,7 +4,36 @@ Task ID: T39
 Source MVP card: MVP-017
 Title: Implement Warrior melee attack prototype
 Owner agent: [[Coder]]
-Status: pending
+Status: done
+
+## Completion
+
+Done on 2026-05-22.
+
+- Created `InternUnity/Assets/Scripts/Combat/WarriorAttack.cs`.
+- Added `WarriorAttack` to the Player in `InternUnity/Assets/Scenes/Game.unity`.
+- Wired `WarriorAttack` to the scene `PlayerInputReader`.
+- Serialized defaults: damage `2`, cooldown `0.55`, arc angle `180`, melee range `1.35`.
+- Uses held attack input from `PlayerInputReader` and repeats by cooldown.
+- Uses the aim direction, falling back to the last non-zero aim direction.
+- Detects enemies on the `Enemy` layer inside melee range, filters them by aim arc, and applies `DamagePayload`.
+- Supports multiple enemies in the arc and only damages each enemy once per swing.
+- Added temporary debug arc rays and a short slash sprite flash.
+
+## Generated Asset Usage
+
+- Checked `InternUnity/Assets/Generated/` and `Intern/Assets/Generated/MVP/vfx/`, `projectiles/`, `ui/icons/`, and `characters/`.
+- Imported `Intern/Assets/Generated/MVP/vfx/vfx_warrior_slash_arc_default.png` into `InternUnity/Assets/Generated/MVP/vfx/vfx_warrior_slash_arc_default.png`.
+- Assigned the imported slash sprite to the Player child `WarriorSlashDebug` for temporary attack feedback.
+
+## Verification
+
+- Validated `WarriorAttack.cs` with Unity script validation: 0 errors, 0 warnings.
+- Verified play-mode attack behavior with three test enemies:
+  - Two enemies inside the right-facing 180-degree arc each took `2` damage.
+  - One enemy behind the player took no damage.
+  - Multiple enemies in the arc were damaged by the same swing.
+- Checked Unity console after implementation: 0 errors, 0 warnings.
 
 ## Dependencies
 - T28.

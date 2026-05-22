@@ -33,6 +33,7 @@ last_updated: "2026-05-22"
 - [x] Completed `T##` generated/project asset audit completed by [[Coder]] as `T43`; generated scene button and joystick base sprites were imported into Unity, and missing joystick thumb art was documented
 - [x] `T28` player input reader completed by [[Coder]]; `PlayerInputReader` exposes movement, aim, and attack-held values from joysticks with editor keyboard/mouse fallback
 - [x] `T38` class selection state completed by [[Coder]]; ClassSelect can choose Warrior, Archer, or Mage and Game can read the selected class through runtime state
+- [x] `T39` Warrior attack prototype completed by [[Coder]]; Player can damage enemies inside a short 180-degree aim arc with generated slash feedback
 
 ## In Progress
 - [ ] Obsolete landscape generated asset cleanup routed to [[ArtDirector]]
@@ -45,7 +46,7 @@ last_updated: "2026-05-22"
 - [ ] Run [[UIUXDesigner]] on `Tasks/Open/UIUX-Rebuild-AssetSpecs-Portrait-Mobile-Stackspire.md`
 - [ ] Run [[Coder]] on `Tasks/Open/T23_Coder-Audit-Unity-Baseline-Stackspire.md` as the first MVP implementation task
 - [ ] Run [[Coder]] on `Tasks/Open/T22_Coder-Configure-Unity-Layers-Sorting-Collision-Stackspire.md` after T23 and before prefab implementation
-- [ ] Run [[Coder]] on `Tasks/Open/T39_Coder-Implement-Warrior-Attack-Prototype-Stackspire.md` now that `T38` is complete
+- [ ] Run [[Coder]] on `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md` now that combat and run counters exist
 - [ ] Use decomposed `Tasks/Open/T24_...` through `Tasks/Open/T41_...` for first Coder implementation handoffs
 - [ ] Run [[QA]] on `Tasks/Open/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md` after T40 GameOver flow exists
 - [ ] Run [[ArtDirector]] on `Tasks/Open/UIUX_Art_Asset_Request.md` only after portrait asset requirements are reconciled
