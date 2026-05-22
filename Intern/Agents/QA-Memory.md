@@ -7,6 +7,7 @@ owner: "[[QA]]"
 > Write rule: append to **Recent**. Move oldest to **Archive** when Recent exceeds 3 entries.
 
 ## Recent
+- T42 - DONE - created `Docs/QA/Vertical-Slice-Checklist-Stackspire.md`; full debug playtest controls are missing, with Coder follow-up noted.
 - T00 — APPROVED — vault setup
 
 ## Archive

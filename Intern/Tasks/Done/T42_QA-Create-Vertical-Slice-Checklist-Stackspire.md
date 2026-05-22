@@ -4,7 +4,18 @@ Task ID: T42
 Source MVP card: MVP-020
 Title: Create debug QA checklist for the first playable vertical slice
 Owner agent: [[QA]]
-Status: pending
+Status: done
+
+## Completion
+
+Done on 2026-05-22.
+
+- Created `Intern/Docs/QA/Vertical-Slice-Checklist-Stackspire.md`.
+- Checklist covers `MainMenu -> ClassSelect -> Game -> clear room -> advance -> die -> GameOver -> Restart`.
+- Included expected Room 1 values: 2 Grunts, 2 coins, and 65 score after clear.
+- Covered joystick/player movement, Warrior attack, Grunt death, room clear, locked/unlocked north exit, score, coins, HUD, death, GameOver stats, save persistence smoke, generated asset readability, and portrait safe-area checks.
+- Recorded available partial debug aids and explicitly listed missing Coder follow-up for full debug playtest controls.
+- Included known out-of-scope gaps for this slice.
 
 ## Dependencies
 - T40.
