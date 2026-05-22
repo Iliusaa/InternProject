@@ -16,7 +16,7 @@ Status: pending
 - `Core/Conventions.md`
 - `Tasks/Open/T28_Coder-Create-Player-Input-Reader-Stackspire.md`
 - `Tasks/Open/T31_Coder-Implement-Enemy-Base-Stackspire.md`
-- `Tasks/Open/T38_Coder-Implement-Class-Selection-State-Stackspire.md`
+- `Tasks/Done/T38_Coder-Implement-Class-Selection-State-Stackspire.md`
 - `Tasks/Open/PM-Coder-Generated-Assets-Handoff-Stackspire.md`
 
 ## Generated Asset Requirement

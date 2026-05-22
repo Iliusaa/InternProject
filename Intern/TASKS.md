@@ -38,9 +38,9 @@
 | T33 | Implement room manager | Coder | done | T32 | Completed: `Tasks/Done/T33_Coder-Implement-Room-Manager-Stackspire.md`; created `RoomManager`, wired Game scene spawn points, spawns 2 Room 1 Grunts, tracks active enemies, and fires room clear once |
 | T34 | Implement north exit lock | Coder | done | T22; T33 | Completed: `Tasks/Done/T34_Coder-Implement-North-Exit-Lock-Stackspire.md`; created `NorthExit`, locked/unlocked visuals, room-clear unlock, player advance trigger, room increment, and respawn flow |
 | T35 | Implement run coin counter | Coder | done | T33 | Completed: `Tasks/Done/T35_Coder-Implement-Run-Coin-Counter-Stackspire.md`; created `RunCoinCounter`, RoomManager enemy-death event, +1 coin per enemy death, reset, change event, and debug inspector count |
-| T36 | Implement run score counter | Coder | pending | T33; T34 | Handoff: `Tasks/Open/T36_Coder-Implement-Run-Score-Counter-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-014 |
-| T37 | Implement Game HUD prototype | Coder | pending | T26; T34; T35; T36 | Handoff: `Tasks/Open/T37_Coder-Implement-Game-HUD-Prototype-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-015 |
-| T38 | Implement class selection state | Coder | pending | T24 | Handoff: `Tasks/Open/T38_Coder-Implement-Class-Selection-State-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-016 |
+| T36 | Implement run score counter | Coder | done | T33; T34 | Completed: `Tasks/Done/T36_Coder-Implement-Run-Score-Counter-Stackspire.md`; adds enemy death and room-clear score events |
+| T37 | Implement Game HUD prototype | Coder | done | T26; T34; T35; T36 | Completed: `Tasks/Done/T37_Coder-Implement-Game-HUD-Prototype-Stackspire.md`; binds Hearts, Score, Room, and Coins HUD labels |
+| T38 | Implement class selection state | Coder | done | T24 | Completed: `Tasks/Done/T38_Coder-Implement-Class-Selection-State-Stackspire.md`; runtime class selection now flows from ClassSelect to Game |
 | T39 | Implement Warrior attack prototype | Coder | pending | T28; T31; T38 | Handoff: `Tasks/Open/T39_Coder-Implement-Warrior-Attack-Prototype-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-017 |
 | T40 | Implement GameOver flow | Coder | pending | T30; T34; T35; T36 | Handoff: `Tasks/Open/T40_Coder-Implement-GameOver-Flow-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-018 |
 | T41 | Implement save system stub | Coder | pending | T23 | Handoff: `Tasks/Open/T41_Coder-Implement-Save-System-Stub-Stackspire.md`; decomposed from `MVP_first_task_cards` MVP-019 |
