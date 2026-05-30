@@ -46,6 +46,7 @@
 | T41 | Implement save system stub | Coder | done | T23 | Completed: `Tasks/Done/T41_Coder-Implement-Save-System-Stub-Stackspire.md`; PlayerPrefs JSON save stores high score, banked coins, upgrade levels, and class special flags |
 | T42 | Create vertical-slice QA checklist | QA | done | T40 | Completed: `Tasks/Done/T42_QA-Create-Vertical-Slice-Checklist-Stackspire.md`; checklist: `Docs/QA/Vertical-Slice-Checklist-Stackspire.md` |
 | T43 | Audit completed T## generated/project asset integration | Coder | done | Completed T## tasks; generated asset pass | Completed: `Tasks/Done/T43_Coder-Audit-Completed-T-Generated-Assets-Stackspire.md`; imported suitable generated button and joystick base assets, documented missing joystick thumb, and did not broadly reopen completed work |
+| T44 | Create Stackspire fullscreen class-select and room concepts | ArtDirector | done | Probe04 style anchor; rejected 2026-05-30 concepts removed | Completed: `Tasks/Done/T44_ArtDirector-Create-Stackspire-Fullscreen-Concepts.md`; generated 2 class-selection concepts and 2 in-game room concepts under `Assets/Generated/MVP/screens/`, with matching prompt logs and Unity PNG mirrors |
 
 ---
 
