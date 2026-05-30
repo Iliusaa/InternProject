@@ -2,7 +2,7 @@
 
 > Written by: [[GameDesigner]]
 > Validation state: approved by [[BA]] for portrait MVP downstream routing
-> Last updated: 2026-05-19
+> Last updated: 2026-05-30
 
 ---
 
@@ -57,7 +57,7 @@ The game should feel quick, punchy, and approachable. The player should think, "
 
 ## Core Loop
 1. Player starts a run by choosing [[#Warrior]], [[#Archer]], or [[#Mage]].
-2. Player enters a tower room, moves with the left virtual stick, and aims/attacks with the right virtual stick.
+2. Player enters a tower room, moves with one lower-left virtual movement stick, and attacks automatically through target-assisted class attacks.
 3. Each enemy kill adds score and automatically awards its coin reward.
 4. When all enemies in the room are defeated, the north exit opens.
 5. Player moves north to enter the next room stacked above the current room.
@@ -76,9 +76,9 @@ The game should feel quick, punchy, and approachable. The player should think, "
 - **Platform:** Android mobile phones.
 - **Orientation:** portrait-only.
 - **Reference dimension bounds:** 1080 x 1920.
-- **Development input:** keyboard WASD for movement; editor/debug aiming may use mouse or right-stick simulation.
-- **Mobile input:** left virtual stick for analog movement and right virtual stick for aiming/shooting.
-- **Attack input:** attacks autofire while the right aim stick is held; releasing the aim stick stops firing.
+- **Development input:** keyboard WASD for movement. Editor/debug attack uses the same auto-attack rules as mobile; optional mouse/keyboard debug input may be used only to inspect target selection and must not be required for normal play.
+- **Mobile input:** one lower-left virtual stick for analog movement.
+- **Attack input:** normal attacks are automatic. When at least one valid enemy target exists, the selected class attacks at its cooldown using the target-assisted aiming rules below. There is no dedicated aim joystick and no required attack button in MVP.
 - **Target frame rate:** 60 fps.
 - **Camera:** fixed 2D three-quarter top-down camera per room; no scrolling inside a room.
 - **Phone ergonomics:** primary thumb controls sit in the lower third of the screen, outside the combat-critical center lane and clear of system safe areas.
@@ -90,16 +90,29 @@ The game should feel quick, punchy, and approachable. The player should think, "
 | Move left | A | Left virtual stick left |
 | Move down | S | Left virtual stick down |
 | Move right | D | Left virtual stick right |
-| Aim / attack | Mouse or right-stick simulation | Hold right virtual stick |
+| Aim / attack | Auto-attack with optional debug target inspection | Automatic target-assisted attacks; no aim stick |
 | Pause | Esc | Pause button near upper safe area |
 
 ### Portrait Control Requirements
 - The movement stick is anchored in the lower-left safe zone.
-- The aim/attack stick is anchored in the lower-right safe zone.
+- The lower-right area does not contain a second virtual stick in MVP.
 - Stick visuals must not cover the player spawn lane, the north exit, or enemy telegraphs.
-- The playable room is framed above and between the thumb zones, with enough lower margin that thumbs do not hide nearby enemies.
+- The playable room is framed above the lower control zone, with enough lower margin that the player's thumb does not hide nearby enemies.
 - Movement analog magnitude is respected; partial stick tilt moves slower than full tilt.
 - Full vertical movement uses a 1.0x multiplier and full horizontal movement uses a 0.8x multiplier. Diagonal movement must be normalized after these axis multipliers are applied.
+
+### Single-Joystick Aim And Attack Rules
+- **Player intent:** the player focuses on positioning, spacing, dodging, and choosing when to approach or kite. The game handles attack firing and target assistance so combat stays readable on portrait phones.
+- **Facing direction:** while moving, the player's facing direction is the normalized movement direction after axis multipliers. When movement returns to zero, the player keeps the last non-zero facing direction. If no facing direction exists yet, default facing is north/up.
+- **Valid target:** an alive, active enemy in the current room that can receive player damage. Warrior valid targets must be inside melee acquisition range: Warrior slash range plus a 0.25 character-height buffer. Archer and Mage valid targets are alive active enemies inside the current room bounds; MVP rooms do not require manual line-of-sight aiming.
+- **Auto-attack trigger:** if at least one valid enemy target exists and the class cooldown is ready, the player performs one normal attack automatically. If no valid enemy exists, no normal attack is created.
+- **Target priority:** when multiple enemies are valid, prefer enemies in front of the player's current facing direction within a 120-degree cone. Within that cone, pick the closest enemy. If no enemy is in that cone, pick the closest valid enemy overall.
+- **Soft target lock:** after an attack chooses a target, keep that target for up to 0.75 seconds if it remains valid. Break the lock immediately if the target dies, leaves the room, becomes invalid, or another enemy moves dangerously close inside the Warrior's melee range.
+- **Attack direction:** attacks use the direction from the player to the chosen target at the moment the attack is fired. If the target becomes invalid during startup, fall back to the current facing direction for that one attack.
+- **Standing still:** standing still does not stop attacking. The player keeps facing the last movement direction and continues auto-attacking valid targets by cooldown using the same target priority and soft-lock rules.
+- **No precision touch aiming:** MVP must not require drag aiming, a second stick, or precise tap targeting during combat.
+- **Anti-frustration rule:** target assistance should prefer immediate threats close to the player over distant enemies when the player would otherwise attack away from a nearby danger.
+- **Kiting limit:** Archer and Mage can attack while moving, but their cooldowns and projectile speeds remain the primary limit on kiting. Do not add a manual fire requirement to solve kiting.
 
 [[#Quick Links|Back to Top]]
 
@@ -155,26 +168,40 @@ The player chooses one class at the start of each run. Classes share the same mo
 | [[#Mage]] | Staff | Slower magic projectile | Higher damage and pierce potential | Slower attack rhythm |
 
 ### Warrior
-- **Attack:** short sword slash in the aim direction.
+- **Attack:** short sword slash toward the current target-assisted attack direction.
 - **Range:** short melee arc.
 - **Damage:** high.
 - **Rate:** medium.
 - **Intended play:** dodge into openings, slash enemies, retreat before being surrounded.
+- **Single-joystick behavior:** Warrior only attacks when an enemy is inside melee acquisition range. Target priority favors the closest enemy in front of the player's facing direction, but immediately favors a close enemy inside melee range if that enemy is the most dangerous nearby threat.
+- **Standing still:** Warrior keeps the last facing direction and continues slashing valid nearby targets by cooldown.
 
 ### Archer
-- **Attack:** arrow projectile in the aim direction.
+- **Attack:** arrow projectile toward the current target-assisted attack direction.
 - **Range:** long.
 - **Damage:** medium-low.
 - **Rate:** fast.
 - **Intended play:** keep distance, kite enemies, pick targets before they close in.
+- **Single-joystick behavior:** Archer auto-fires when any enemy is available in the room and line/path rules allow a shot. Movement direction biases target selection, but closest valid target fallback keeps Archer usable while dodging.
+- **Standing still:** Archer keeps firing at the current soft-locked or closest valid target by cooldown.
 
 ### Mage
-- **Attack:** magic bolt projectile in the aim direction.
+- **Attack:** magic bolt projectile toward the current target-assisted attack direction.
 - **Range:** medium-long.
 - **Damage:** high.
 - **Rate:** slow.
 - **MVP special:** magic bolts penetrate unlimited enemies until hitting a wall after the one-time Mage special upgrade.
 - **Intended play:** line up enemies, fire carefully, use spacing to cover slower attacks.
+- **Single-joystick behavior:** Mage auto-fires at a valid target by cooldown. Movement direction biases target selection so the player can line up shots through positioning, but the nearest valid enemy fallback prevents missed input precision from dominating.
+- **Standing still:** Mage keeps the current soft target if valid; otherwise fires toward the highest-priority valid target.
+
+### Normal Attacks And Class Specials
+- Normal attacks require no dedicated attack button in MVP.
+- Class specials do not add a second control:
+  - Warrior special remains passive armor at the start of each room.
+  - Archer special fires the second arrow in the same direction as the auto-fired first arrow after 0.08 sec.
+  - Mage special makes auto-fired bolts penetrate enemies until hitting a wall.
+- Future active class specials, if added later, need a separate design pass and are out of MVP scope.
 
 [[#Quick Links|Back to Top]]
 
@@ -318,8 +345,8 @@ All UI must be designed for portrait phones using the 1080 x 1920 reference boun
 - Current-run coins sit near the top HUD, readable without crowding hearts or pause.
 - The central combat lane remains visually clear.
 - Movement stick sits lower-left.
-- Aim/attack stick sits lower-right.
-- The bottom control zone may use translucent visuals but must not hide player damage, enemy telegraphs, or the south entrance.
+- No aim/attack stick is shown in MVP.
+- The bottom control zone may use translucent movement-stick visuals but must not hide player damage, enemy telegraphs, or the south entrance.
 
 ### Main Menu
 - Title and primary Start action are centered in the upper and middle screen area.
@@ -511,8 +538,12 @@ These values are recommended MVP defaults for implementation and QA. Values that
 
 ## MVP System Acceptance Criteria
 - On Android phones, the game runs in portrait orientation using 1080 x 1920 reference bounds.
-- The movement stick is lower-left and the aim/attack stick is lower-right, both clear of the central combat lane.
-- Holding the right aim stick causes the selected class to attack repeatedly at its cooldown; releasing the right aim stick stops new attacks.
+- The movement stick is lower-left and is the only virtual joystick required for MVP combat.
+- The lower-right HUD area does not require an aim/attack stick.
+- The selected class attacks automatically at its cooldown when a valid enemy target exists.
+- Aim direction is target-assisted using movement/facing bias, closest-target fallback, and the soft target-lock rules in [[#Single-Joystick Aim And Attack Rules]].
+- Standing still preserves last facing direction and does not stop auto-attacks against valid targets.
+- Warrior, Archer, and Mage each use the single-joystick target-assisted rules while preserving their class ranges, cooldowns, damage profiles, and passive special upgrades.
 - At full stick tilt, horizontal movement uses 0.8x speed and vertical movement uses 1.0x speed; diagonal movement is normalized after those axis multipliers are applied.
 - Enemy kill, room clear, current-run coins, room number, and health changes are visible in HUD values or device logs.
 - Any killed enemy adds +20 score and +1 run coin.

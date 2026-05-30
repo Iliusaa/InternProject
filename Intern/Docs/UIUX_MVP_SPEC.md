@@ -32,7 +32,7 @@ This spec stays inside the approved MVP. It does not add inventory, quests, ads,
 - A new player can start a run within 5 seconds.
 - Class differences are understandable from compact cards without long reading.
 - In-run HUD is readable while combat is moving inside a tall phone frame.
-- Touch controls are comfortable for two-thumb portrait phone play.
+- Touch controls are comfortable for one-stick portrait phone play, with the right side of the screen kept free of a required second joystick.
 - The player always understands health, Score, Room, Coins, pause state, and whether the north exit is locked.
 - Permanent upgrade states are clear: affordable, unavailable, maxed, or bought.
 - Game Over shows the run result and pushes the player toward Restart or Upgrades.
@@ -123,7 +123,7 @@ Coordinates use a 1080 x 1920 reference frame with origin at top-left for docume
 | Game HUD | Top-center status | x 300-780, y 32-154 | Score and Room |
 | Game HUD | Top-right status | x 650-1048, y 32-136 | Coins and Pause |
 | Game HUD | Combat lane | x 80-1000, y 170-1420 | player, enemies, projectiles, exits |
-| Game HUD | Bottom controls | x 0-1080, y 1410-1870 | movement and aim sticks |
+| Game HUD | Bottom controls | x 0-1080, y 1410-1870 | single movement stick lower-left; no aim stick |
 | Pause Overlay | Dimmed gameplay | full screen | gameplay backdrop at 60% black overlay |
 | Pause Overlay | Action panel | x 190-890, y 565-1195 | Resume, Restart, Main Menu |
 | Game Over | Result header | x 96-984, y 180-360 | Game Over, New High Score |
@@ -445,7 +445,7 @@ Class Special bought:
 
 ### Goal
 
-Keep combat readable while exposing health, Score, Room, Coins, pause, and dual-stick controls in a tall phone layout.
+Keep combat readable while exposing health, Score, Room, Coins, pause, and one movement joystick in a tall phone layout.
 
 ### Wireframe
 
@@ -461,7 +461,7 @@ Keep combat readable while exposing health, Score, Room, Coins, pause, and dual-
 |         player/enemies        |
 |                              |
 |                              |
-| (move stick)    (aim stick)  |
+| (move stick)                 |
 +------------------------------+
 ```
 
@@ -509,20 +509,17 @@ Bottom-left:
 
 Bottom-right:
 
-- Aim/attack joystick.
-- Anchor: bottom-right.
-- Center: x -235, y 245 inside safe area.
-- Active touch zone: 340 x 340.
-- Visual base: 240 x 240.
-- Thumb: 96 x 96.
+- No aim/attack joystick in MVP.
+- Keep this area visually clear for gameplay readability, future context actions, or device ergonomics.
+- Do not add a second virtual stick under another name.
 
 ### Combat Readability Rules
 
 - Keep the vertical center lane clear from persistent UI.
 - Keep the top HUD inside y 32-154 and the bottom controls inside y 1410-1870.
-- The room entrance, player spawn, and nearby enemy paths must sit above the joystick visual bases.
-- Joysticks use 35% to 45% opacity when idle.
-- Joysticks increase to 60% opacity while touched.
+- The room entrance, player spawn, and nearby enemy paths must sit above the movement joystick visual base.
+- The movement joystick uses 35% to 45% opacity when idle.
+- The movement joystick increases to 60% opacity while touched.
 - HUD labels use shadow or 2 px dark outline.
 - Score feedback floats near the defeated enemy but fades quickly and does not block the north exit.
 
@@ -564,15 +561,15 @@ Locked north exit:
 - Empty: dark broken heart outline.
 - Armor from Warrior Class Special: small silver shield pip overlay before hearts, only if the special is active.
 
-## Virtual Joystick Spec
+## Single Movement Joystick Spec
 
 ### Shared Rules
 
-- Left stick controls movement.
-- Right stick controls aim and autofire.
-- Releasing right stick stops firing.
+- The lower-left movement stick controls movement.
+- Normal attacks are automatic and follow the target-assisted rules in `GDD.md`.
+- There is no right aim stick and no required attack button in MVP.
 - Vertical movement speed difference is not shown as UI text.
-- Joysticks must not block the player, enemies, projectiles, south entrance, or north exit.
+- The movement joystick must not block the player, enemies, projectiles, south entrance, or north exit.
 
 ### Movement Stick
 
@@ -582,18 +579,19 @@ Locked north exit:
 - Active drag radius: 110 reference px.
 - Dead zone can be implemented by Coder, but no visual dead zone label is needed.
 
-### Aim/Attack Stick
+### Attack Feedback
 
-- Base: translucent ring with subtle weapon mark.
-- Thumb: brighter cap with small attack direction notch.
-- While held, show a faint radial aiming line from thumb direction if it does not clutter combat.
-- While released, no autofire indicator is shown.
+- No persistent attack control is shown.
+- If Coder needs a feedback affordance, use lightweight world feedback: class attack VFX, projectile direction, slash arc, or brief target-facing animation.
+- Do not add a permanent cooldown button, attack button, or target reticle unless GameDesigner creates a separate follow-up design.
+- If an optional auto-attack status indicator is later needed, it must be non-interactive, compact, and outside the central combat lane.
 
 ### Accessibility
 
 - Do not make joystick visuals smaller than 240 x 240 at reference size.
 - Touch zones should be larger than visuals.
-- Keep each stick reachable by thumb without crossing the screen center.
+- Keep the movement stick reachable by the left thumb without crossing the screen center.
+- Keep the lower-right side free from mandatory input so right-handed and one-thumb play remains less cluttered than the previous dual-stick layout.
 
 ## Pause Overlay
 
@@ -718,7 +716,7 @@ Build these as reusable Unity prefabs where practical.
 | Room number label | HUD Room | 280 x 32 | `UI/RoomLabel.prefab` |
 | Heart container | Health display | max 398 x 104 | `UI/HeartContainer.prefab` |
 | Heart icon | Full/empty/armor states | 48 x 48 | `UI/HeartIcon.prefab` |
-| Virtual joystick base | Stick visual | 240 x 240 | `UI/VirtualJoystickBase.prefab` |
+| Virtual joystick base | Movement stick visual | 240 x 240 | `UI/VirtualJoystickBase.prefab` |
 | Virtual joystick thumb | Stick thumb | 96 x 96 | child of joystick prefab |
 | Pause overlay panel | Pause menu | 700 x 630 | `UI/PauseOverlay.prefab` |
 | Result stat row | Game Over stats | 700 x 64 | `UI/ResultStatRow.prefab` |
@@ -858,7 +856,6 @@ Suggested generated asset names:
 - `ui_icon_archer_bow.png`
 - `ui_icon_mage_staff.png`
 - `ui_joystick_movement_base.png`
-- `ui_joystick_aim_base.png`
 - `ui_joystick_thumb.png`
 - `ui_door_locked.png`
 - `ui_door_unlocked.png`
@@ -886,7 +883,7 @@ HUD:
 - Given Game HUD on a portrait Android phone, hearts are top-left.
 - Given Game HUD, Score is top-center and Room is below Score.
 - Given Game HUD, current-run Coins and pause are top-right without overlap.
-- Given Game HUD, movement stick is lower-left and aim/attack stick is lower-right.
+- Given Game HUD, the single movement stick is lower-left and no aim/attack stick is required.
 - Given an enemy kill, Score and Coins update visibly.
 - Given room clear, `Room Clear` or door unlock feedback appears.
 - Given player damage, a heart is lost and red damage feedback appears.
